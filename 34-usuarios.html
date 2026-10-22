@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.4 Mantenimiento de Usuarios - DSI GERENCIAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       CABECERA GLOBAL (TOPBAR)
+       ========================================================================== -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      
+      <!-- Izquierda: Marca y Logotipo -->
+      <div class="topbar-left">
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Abrir menú de navegación">☰</button>
+        <div class="brand-group">
+          <div class="brand-logo">DSI SAC</div>
+          <div class="brand-divider"></div>
+          <div class="brand-title">PORTAL DE ADMINISTRACION</div>
+          <span class="brand-badge">DOCS v1.0</span>
+        </div>
+      </div>
+
+      <!-- Centro: Buscador Global con atajo Ctrl+K -->
+      <div class="topbar-center">
+        <div class="search-box-global">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Buscar en la documentación..." id="globalSearchInput">
+          <kbd class="shortcut-badge">Ctrl+K</kbd>
+        </div>
+      </div>
+
+      <!-- Derecha: Estado del servicio, Enlace de Soporte y Avatar Neutro en SVG -->
+      <div class="topbar-right">
+        <div class="service-status">
+          <span class="status-indicator"></span>
+          <span>🟢 En línea</span>
+        </div>
+        <a href="#soporte" class="support-anchor">Soporte Técnico DSI SAC</a>
+        <div class="user-avatar" title="Usuario del Sistema">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       LAYOUT PRINCIPAL DE 2 COLUMNAS
+       ========================================================================== -->
+  <div class="layout-container">
+
+    <!-- COLUMNA 1: SIDEBAR IZQUIERDO (300px FIJO) -->
+    <aside class="sidebar" id="sidebar">
+      
+      <div class="sidebar-search-area">
+        <input type="text" id="sidebarFilter" placeholder="Filtrar por sección...">
+      </div>
+
+      <div class="sidebar-root-title">▼ DSI GERENCIAL - MANUAL DE USUARIO</div>
+
+      <!-- 0. GENERALIDADES -->
+      <div class="nav-category" data-group="cat-0">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 0. GENERALIDADES
+          </button>
+          <ul class="category-links" id="cat-0">
+          <li>
+            <a href="index.html" class="nav-item">
+              <span class="bullet">•</span> 0.0 ¿Qué es DSI GERENCIAL?
+            </a>
+          </li>
+          <li>
+            <a href="01-login.html" class="nav-item">
+              <span class="bullet">•</span> 0.1 Login e inicio de sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 1. BOTONES Y HOME -->
+      <div class="nav-category" data-group="cat-1">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 1. BOTONES Y HOME
+          </button>
+          <ul class="category-links" id="cat-1">
+          <li>
+            <a href="10-botones-tablas.html" class="nav-item">
+              <span class="bullet">•</span> 1.0 Barra Superior, Botones y Controles de Tabla
+            </a>
+          </li>
+          <li>
+            <a href="11-corporacion.html" class="nav-item">
+              <span class="bullet">•</span> 1.1 Clientes por Corporación
+            </a>
+          </li>
+          <li>
+            <a href="12-vps.html" class="nav-item">
+              <span class="bullet">•</span> 1.2 Clientes por VPS
+            </a>
+          </li>
+          <li>
+            <a href="13-ftp.html" class="nav-item">
+              <span class="bullet">•</span> 1.3 FTP del DSINET
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. ALERTA -->
+      <div class="nav-category" data-group="cat-2">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 2. ALERTA
+          </button>
+          <ul class="category-links" id="cat-2">
+          <li>
+            <a href="21-alertas-cpe.html" class="nav-item">
+              <span class="bullet">•</span> 2.1 Responsables Alerta CPE
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. MANTENIMIENTOS (GRUPO DESPLEGADO Y 3.4 ACTIVE) -->
+      <div class="nav-category" data-group="cat-3">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 3. MANTENIMIENTOS
+          </button>
+          <ul class="category-links" id="cat-3">
+          <li>
+            <a href="31-corporaciones.html" class="nav-item">
+              <span class="bullet">•</span> 3.1 Mantenimiento de Corporaciones
+            </a>
+          </li>
+          <li>
+            <a href="32-empresas.html" class="nav-item">
+              <span class="bullet">•</span> 3.2 Mantenimiento de Empresas
+            </a>
+          </li>
+          <li>
+            <a href="33-aplicaciones.html" class="nav-item">
+              <span class="bullet">•</span> 3.3 Mantenimiento de Aplicaciones
+            </a>
+          </li>
+          <li>
+            <a href="34-usuarios.html" class="nav-item active">
+              <span class="bullet">•</span> 3.4 Mantenimiento de Usuarios
+            </a>
+          </li>
+          <li>
+            <a href="35-usuarios-app.html" class="nav-item">
+              <span class="bullet">•</span> 3.5 Usuarios por Aplicación
+            </a>
+          </li>
+          <li>
+            <a href="36-usuarios-empresa.html" class="nav-item">
+              <span class="bullet">•</span> 3.6 Usuarios por Empresa
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- Fondo tenue para dispositivos móviles -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- COLUMNA 2: ÁREA DE CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+      <!-- Breadcrumbs oficiales -->
+      <nav class="breadcrumb-trail" aria-label="Migas de pan">
+        <a href="index.html">Docs</a>
+        <span class="separator">/</span>
+        <a href="31-corporaciones.html">3. MANTENIMIENTOS</a>
+        <span class="separator">/</span>
+        <span class="active-crumb">3.4 Mantenimiento de Usuarios</span>
+      </nav>
+
+      <!-- 1. ENCABEZADO Y METADATOS -->
+      <header class="doc-header">
+        <div class="doc-meta-tags">
+          <span class="meta-tag badge-section">GESTIÓN DE IDENTIDADES Y CUENTAS</span>
+          <span class="meta-tag">Sección 3.4</span>
+          <span class="meta-tag">Última revisión: Octubre 2024</span>
+          <span class="meta-tag">Lectura estimada: 5 min</span>
+          <span class="meta-tag badge-access">Nivel: Administración / Seguridad</span>
+        </div>
+        <h1 class="doc-title">3.4 Mantenimiento de Usuarios</h1>
+        <p class="doc-intro">
+          Consola de administración para el registro de colaboradores, asignación de correos institucionales de autenticación y vinculación de cuentas operativas a empresas y corporaciones del sistema.
+        </p>
+      </header>
+
+      <!-- Recuadro destacado: Ruta de Acceso -->
+      <div class="callout-box" style="margin-bottom: 2em;">
+        <div class="callout-icon">📍</div>
+        <div class="callout-body">
+          <div class="callout-title">Ruta de Acceso al Módulo</div>
+          <p>
+            <strong>1.</strong> Barra Superior &nbsp;➔&nbsp; 
+            <strong>2.</strong> Menú Desplegable <strong>Mantenimientos ⌵</strong> &nbsp;➔&nbsp; 
+            <strong>3.</strong> Clic en la opción <strong>Usuarios</strong>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Recorte de Ruta de Acceso en Menú -->
+      <section class="content-section" style="border-top: none; padding-top: 0; margin-bottom: 2em;">
+        <div class="screenshot-container">
+          <div class="img-placeholder" data-img-ref="ruta-acceso-usuarios" style="width: 100%; min-height: 120px; flex-direction: column; padding: 1.5em; text-align: center;">
+            <img src="Imagenes/Mantenimientos/34-ruta-acceso-usuarios.png" alt="Ruta de acceso a Usuarios desde el menú Mantenimientos" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+            <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+              <span class="placeholder-icon">📍</span>
+              <div class="placeholder-title">[Espacio reservado: Acceso a Usuarios en Menú Mantenimientos]</div>
+              <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/34-ruta-acceso-usuarios.png</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. ESPECIFICACIÓN TÉCNICA DE LA GRILLA DE USUARIOS -->
+      <section class="content-section">
+        <h2 class="section-heading">1. Especificación Técnica de la Grilla de Usuarios</h2>
+        <p class="section-description">
+          Vista panorámica donde se listan las cuentas de usuario dadas de alta, sus empresas asignadas, datos de contacto personal y estado de acceso al portal.
+        </p>
+
+        <!-- ESPACIO 1: IMAGEN DE LA GRILLA PRINCIPAL -->
+        <div class="screenshot-container">
+          <div class="img-placeholder" data-img-ref="grilla-principal-usuarios" style="width: 100%; min-height: 22em; flex-direction: column; padding: 2em 1.5em; text-align: center;">
+            <img src="Imagenes/Mantenimientos/34-grilla-principal-usuarios.png" alt="Pantalla principal de Mantenimiento de Usuarios" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+            <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.4em;">
+              <span class="placeholder-icon">👥</span>
+              <div class="placeholder-title">[Espacio reservado: Captura completa de la Grilla de Mantenimiento de Usuarios]</div>
+              <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/34-grilla-principal-usuarios.png</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla Completa de Columnas de la Grilla -->
+        <div class="table-responsive-wrapper">
+          <table class="manual-table">
+            <thead>
+              <tr>
+                <th style="width: 20%;">CAMPO / COLUMNA</th>
+                <th style="width: 18%;">TIPO DE CONTROL</th>
+                <th style="width: 18%;">ESTADO / VALOR</th>
+                <th style="width: 44%;">PROPÓSITO OPERATIVO Y REGLA DE NEGOCIO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Empresa</strong></td>
+                <td>Razón Social</td>
+                <td>Texto Alfanumérico</td>
+                <td>Razón social a la cual se encuentra asignado el colaborador para la ejecución de sus operaciones.</td>
+              </tr>
+              <tr>
+                <td><strong>Corporacion <span style="color: #0284C7;">›</span></strong></td>
+                <td>Denominación Matriz</td>
+                <td>Texto Vinculado</td>
+                <td>Grupo empresarial al que pertenece la empresa asignada (o <em>--SIN CORPORACION--</em>).</td>
+              </tr>
+              <tr>
+                <td><strong>Nombre</strong></td>
+                <td>Identificación Personal</td>
+                <td>Nombres y Apellidos</td>
+                <td>Nombre formal del colaborador para fines de auditoría y trazabilidad en logs.</td>
+              </tr>
+              <tr>
+                <td><strong>Correo</strong></td>
+                <td>Correo Electrónico</td>
+                <td>Email Corporativo</td>
+                <td>Identificador principal de inicio de sesión y canal para recuperación de contraseñas.</td>
+              </tr>
+              <tr>
+                <td><strong>Estado</strong></td>
+                <td>Badge de Estado</td>
+                <td><span style="color: #059669; font-weight: 600;">ACTIVO</span> / <span style="color: #DC2626; font-weight: 600;">INACTIVO</span></td>
+                <td>Define si el usuario se encuentra facultado para autenticarse y operar en el portal.</td>
+              </tr>
+              <tr>
+                <td><strong>Acciones de Fila</strong></td>
+                <td>Botones de Comando</td>
+                <td>Modificar / Desactivar</td>
+                <td>Comandos contextuales para actualizar información de la cuenta o revocar el acceso.</td>
+              </tr>
+              <tr>
+                <td><strong>Buscador Superior</strong></td>
+                <td>Filtrado en tiempo real</td>
+                <td>Caja de texto</td>
+                <td>Búsqueda reactiva por nombres, correo institucional o razón social.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 3. DETALLE DE BOTONES, MODALES Y ACCIONES OPERATIVAS -->
+      <section class="content-section">
+        <h2 class="section-heading">2. Detalle de Botones, Modales y Acciones Operativas</h2>
+        <p class="section-description">
+          Espacios reservados para documentar los formularios modales y los comandos contextuales por cada colaborador.
+        </p>
+
+        <!-- BOTÓN: + NUEVO USUARIO -->
+        <article class="content-section" style="margin-top: 1.5em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin-bottom: 0.4em;">Botón: + Nuevo</h3>
+          <p class="section-description">
+            Abre el formulario modal para ingresar nombres, correo corporativo, empresa y contraseña temporal.
+          </p>
+
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-nuevo-usuario" style="width: 100%; min-height: 18em; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/34-modal-nuevo-usuario.png" alt="Modal Nuevo Usuario" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🪟</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Nuevo - Alta de Usuario]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/34-modal-nuevo-usuario.png</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive-wrapper">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%;">CAMPO / CONTROL</th>
+                  <th style="width: 18%;">TIPO</th>
+                  <th style="width: 15%;">REQ</th>
+                  <th style="width: 42%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Nombres</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Texto libre</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Nombres completos del nuevo colaborador.</td>
+                </tr>
+                <tr>
+                  <td><strong>Apellido paterno</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Texto libre</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Primer apellido del usuario.</td>
+                </tr>
+                <tr>
+                  <td><strong>Tipo Usuario</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Desplegable</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Perfil o tipo de operador en el portal.</td>
+                </tr>
+                <tr>
+                  <td><strong>Teléfono</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Prefijo + Núm.</td>
+                  <td>No</td>
+                  <td>Prefijo (+51 PE) y celular para notificaciones.</td>
+                </tr>
+                <tr>
+                  <td><strong>Empresa</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Desplegable</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Razón social a la que queda asignado.</td>
+                </tr>
+                <tr>
+                  <td><strong>Correo</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Email</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Correo corporativo para inicio de sesión.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cerrar / Guardar</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Botones</td>
+                  <td>—</td>
+                  <td>Cancela o añade al colaborador a la lista.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- ACCIÓN DE FILA: MODIFICAR USUARIO -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em;">
+            <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0;">
+              Acción de Fila: Modificar Usuario (Lápiz Azul)
+            </h3>
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: #0284C7; border-radius: 50%;"></span>
+          </div>
+
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Despliega el formulario para actualizar datos de contacto, nombres o transferir de empresa al usuario.
+          </p>
+
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-modificar-usuario" style="width: 100%; min-height: 220px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/34-modal-modificar-usuario.png" alt="Modal Modificar Usuario" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">✏️</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Modificar Usuario]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/34-modal-modificar-usuario.png</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ACCIÓN DE FILA: DESACTIVAR/INACTIVAR -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em;">
+            <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0;">
+              Acción de Fila: Desactivar / Inactivar (Aspa Roja)
+            </h3>
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: #EF4444; border-radius: 50%;"></span>
+          </div>
+
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Bloquea el acceso del usuario al portal sin eliminar su trazabilidad histórica en auditorías.
+          </p>
+
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-inactivar-usuario" style="width: 100%; min-height: 160px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/34-modal-inactivar-usuario.png" alt="Confirmación Desactivar Usuario" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🚫</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Desactivar / Inactivar Usuario]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/34-modal-inactivar-usuario.png</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ACCIÓN DE FILA: REACTIVACIÓN DE CUENTA -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em;">
+            <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0;">
+              Acción de Fila: Reactivación de Cuenta (Reactivar)
+            </h3>
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: #059669; border-radius: 50%;"></span>
+          </div>
+
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Comando para restituir los privilegios a un usuario suspendido o inactivo.
+          </p>
+
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-reactivar-usuario" style="width: 100%; min-height: 160px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/34-modal-reactivar-usuario.png" alt="Confirmación Reactivación de Usuario" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🔄</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Reactivación de Cuenta]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/34-modal-reactivar-usuario.png</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- NOTA DE GOBERNANZA Y SEGURIDAD -->
+      <div class="callout-box" style="margin-top: 2.5em;">
+        <div class="callout-icon" style="font-size: 1.2em; color: #0284C7;">🛡️</div>
+        <div class="callout-body">
+          <div class="callout-title" style="color: #0369A1; font-weight: 700;">
+            NOTA DE GOBERNANZA Y SEGURIDAD
+          </div>
+          <p>
+            La desactivación de cuentas revoca inmediatamente los tokens JWT y sesiones activas en el SSO, manteniendo intactos los registros de auditoría de transacciones previamente generadas.
+          </p>
+        </div>
+      </div>
+
+      <!-- PAGINACIÓN INFERIOR OFICIAL -->
+      <footer class="pagination-footer" style="margin-top: 3em;">
+        <a href="33-aplicaciones.html" class="pagination-card active-card">
+          <span class="pagination-direction">← ANTERIOR</span>
+          <span class="pagination-title">3.3 Mantenimiento de Aplicaciones</span>
+          <span style="font-size: 0.8em; color: #64748B; margin-top: 0.2em;">Gestión de Catálogo</span>
+        </a>
+        <a href="35-usuarios-app.html" class="pagination-card active-card" style="text-align: right; align-items: flex-end;">
+          <span class="pagination-direction">SIGUIENTE →</span>
+          <span class="pagination-title">3.5 Usuarios por Aplicación</span>
+          <span style="font-size: 0.8em; color: #64748B; margin-top: 0.2em;">Asignación de Roles</span>
+        </a>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

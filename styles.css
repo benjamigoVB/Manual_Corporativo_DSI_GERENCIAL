@@ -1,0 +1,986 @@
+/* ==========================================================================
+   RESET Y VARIABLES DE DISEÑO
+   Tipografía: 100% Inter
+   Unidades: Exclusivamente em, px y % (ESTRICTAMENTE PROHIBIDO rem)
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #F8FAFC;
+  color: #0F172A;
+  font-size: 15px; /* Base de referencia para el cálculo de 'em' */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   CABECERA GLOBAL (TOPBAR)
+   ========================================================================== */
+.topbar {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75em 2em;
+  gap: 1em;
+  max-width: 1440px;      /* Evita que los botones se vayan a los extremos en monitores anchos */
+  margin: 0 auto;         /* Centra la barra superior */
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.mobile-toggle-btn {
+  display: none;
+  background: none;
+  border: 1px solid #CBD5E1;
+  padding: 0.35em 0.65em;
+  border-radius: 4px;
+  font-size: 1.15em;
+  cursor: pointer;
+  color: #0F172A;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65em;
+}
+
+.brand-logo {
+  font-weight: 800;
+  font-size: 1.1em;
+  color: #0369A1;
+  letter-spacing: -0.02em;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 1.2em;
+  background-color: #CBD5E1;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 0.85em;
+  color: #0F172A;
+  letter-spacing: 0.04em;
+}
+
+.brand-badge {
+  background-color: #F0F9FF;
+  color: #0284C7;
+  border: 1px solid #BAE6FD;
+  font-size: 0.7em;
+  font-weight: 700;
+  padding: 0.2em 0.55em;
+  border-radius: 999px;
+}
+
+.topbar-center {
+  flex: 1;
+  max-width: 460px;
+}
+
+.search-box-global {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-box-global input {
+  width: 100%;
+  padding: 0.5em 3.2em 0.5em 2.2em;
+  border-radius: 6px;
+  border: 1px solid #CBD5E1;
+  background-color: #F8FAFC;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85em;
+  color: #0F172A;
+  transition: all 0.2s ease;
+}
+
+.search-box-global input:focus {
+  outline: none;
+  border-color: #0284C7;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75em;
+  font-size: 0.85em;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.shortcut-badge {
+  position: absolute;
+  right: 0.75em;
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 3px;
+  font-size: 0.7em;
+  padding: 0.15em 0.4em;
+  color: #64748B;
+  pointer-events: none;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
+
+.service-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.8em;
+  font-weight: 500;
+  color: #475569;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #059669;
+}
+
+.support-anchor {
+  font-size: 0.85em;
+  color: #0284C7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.support-anchor:hover {
+  text-decoration: underline;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #0369A1;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   LAYOUT PRINCIPAL DE 2 COLUMNAS
+   ========================================================================== */
+.layout-container {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;      
+  margin: 0 auto;        
+  min-height: calc(100vh - 58px);
+  border-left: 1px solid #E2E8F0;
+  border-right: 1px solid #E2E8F0;
+}
+
+/* Columna 1: Sidebar Izquierdo */
+.sidebar {
+  width: 300px;
+  min-width: 300px;
+  flex-shrink: 0;
+  background-color: #FFFFFF;
+  border-right: 1px solid #E2E8F0;
+  padding: 1.25em 1em;
+  overflow-y: auto;
+  position: sticky;
+  top: 58px;
+  height: calc(100vh - 58px);
+}
+
+.sidebar-search-area {
+  margin-bottom: 1.2em;
+}
+
+.sidebar-search-area input {
+  width: 100%;
+  padding: 0.55em 0.85em;
+  border-radius: 5px;
+  border: 1px solid #CBD5E1;
+  background-color: #F8FAFC;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85em;
+  color: #0F172A;
+}
+
+.sidebar-search-area input:focus {
+  outline: none;
+  border-color: #0284C7;
+  background-color: #FFFFFF;
+}
+
+.sidebar-root-title {
+  font-size: 0.75em;
+  font-weight: 800;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8em;
+  padding-left: 0.5em;
+}
+
+.nav-category {
+  margin-bottom: 0.6em;
+}
+
+.category-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82em;
+  font-weight: 700;
+  color: #1E293B;
+  padding: 0.45em 0.5em;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  transition: background-color 0.15s ease;
+}
+
+.category-toggle:hover {
+  background-color: #F1F5F9;
+}
+
+.toggle-arrow {
+  font-size: 0.7em;
+  color: #64748B;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.category-links {
+  list-style: none;
+  padding-left: 0.9em;
+  margin-top: 0.2em;
+}
+
+.category-links li {
+  margin-bottom: 0.15em;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.4em 0.6em;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.82em;
+  color: #475569;
+  line-height: 1.35;
+  transition: all 0.15s ease;
+}
+
+.nav-item:hover {
+  background-color: #F8FAFC;
+  color: #0284C7;
+}
+
+.nav-item.active {
+  background-color: #F0F9FF;
+  color: #0284C7;
+  font-weight: 600;
+  border-left: 3px solid #0284C7;
+}
+
+.nav-item .bullet {
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+/* Columna 2: Contenido Principal */
+.main-content {
+  flex: 1;
+  max-width: 920px;
+  padding: 2.2em 3.2em 4em 3.2em;
+  margin: 0;              /* CAMBIO CLAVE: Elimina el margin: 0 auto que abría el hueco blanco */
+}
+
+/* ==========================================================================
+   BREADCRUMBS Y METADATOS
+   ========================================================================== */
+.breadcrumb-trail {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  font-size: 0.8em;
+  color: #64748B;
+  margin-bottom: 1.4em;
+}
+
+.breadcrumb-trail a {
+  color: #64748B;
+  text-decoration: none;
+}
+
+.breadcrumb-trail a:hover {
+  color: #0284C7;
+}
+
+.breadcrumb-trail .separator {
+  opacity: 0.5;
+}
+
+.breadcrumb-trail .active-crumb {
+  color: #0284C7;
+  font-weight: 500;
+}
+
+.doc-header {
+  margin-bottom: 2em;
+}
+
+.doc-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-bottom: 0.9em;
+}
+
+.meta-tag {
+  font-size: 0.75em;
+  background-color: #F1F5F9;
+  color: #475569;
+  padding: 0.25em 0.6em;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.meta-tag.badge-section {
+  background-color: #E0F2FE;
+  color: #0369A1;
+  font-weight: 600;
+}
+
+.meta-tag.badge-access {
+  background-color: #FEF3C7;
+  color: #92400E;
+  font-weight: 600;
+}
+
+.doc-title {
+  font-size: 1.95em;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5em;
+}
+
+.doc-intro {
+  font-size: 1.05em;
+  color: #334155;
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   CUADRO DE AVISO (CALLOUT BOX)
+   ========================================================================== */
+.callout-box {
+  display: flex;
+  gap: 1em;
+  background-color: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  border-left: 4px solid #0284C7;
+  border-radius: 6px;
+  padding: 1.2em 1.4em;
+  margin-bottom: 2.2em;
+}
+
+.callout-icon {
+  font-size: 1.35em;
+  line-height: 1;
+}
+
+.callout-body {
+  flex: 1;
+}
+
+.callout-title {
+  font-size: 0.95em;
+  font-weight: 700;
+  color: #0369A1;
+  margin-bottom: 0.3em;
+}
+
+.callout-body p {
+  font-size: 0.9em;
+  color: #1E293B;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   SECCIONES Y PLACEHOLDERS DE IMAGEN
+   ========================================================================== */
+.content-section {
+  margin-bottom: 2.5em;
+}
+
+.section-heading {
+  font-size: 1.35em;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.4em;
+  border-bottom: 1px solid #E2E8F0;
+  padding-bottom: 0.35em;
+}
+
+.section-description {
+  font-size: 0.92em;
+  color: #475569;
+  margin-bottom: 1.2em;
+}
+
+.screenshot-container {
+  width: 100%;
+  margin: 1.5em 0;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  background-color: #F8FAFC;
+  overflow: hidden;
+}
+
+.img-placeholder {
+  background-color: #F8FAFC;
+  border: 2px dashed #CBD5E1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.8em;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.placeholder-icon {
+  font-size: 1.8em;
+  margin-bottom: 0.35em;
+}
+
+.placeholder-title {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.25em;
+}
+
+.placeholder-subtext {
+  font-size: 0.78em;
+  color: #64748B;
+  max-width: 520px;
+}
+
+/* ==========================================================================
+   GRILLA DE PILARES FUNDAMENTALES (CARDS)
+   ========================================================================== */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2em;
+  margin-top: 1em;
+}
+
+.pillar-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.pillar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.7em;
+}
+
+.pillar-chip {
+  font-size: 0.68em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.2em 0.55em;
+  border-radius: 4px;
+}
+
+.chip-blue {
+  background-color: #E0F2FE;
+  color: #0369A1;
+}
+
+.chip-purple {
+  background-color: #F3E8FF;
+  color: #6B21A8;
+}
+
+.chip-amber {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.chip-green {
+  background-color: #DCFCE7;
+  color: #166534;
+}
+
+.pillar-icon {
+  font-size: 1.25em;
+}
+
+.pillar-title {
+  font-size: 1em;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.45em;
+}
+
+.pillar-desc {
+  font-size: 0.85em;
+  color: #475569;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.pillar-footer {
+  margin-top: 0.85em;
+  padding-top: 0.65em;
+  border-top: 1px dashed #E2E8F0;
+}
+
+.subtext-item {
+  font-size: 0.75em;
+  color: #64748B;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   TABLA TÉCNICA ESTRUCTURADA
+   ========================================================================== */
+.table-responsive-wrapper {
+  overflow-x: auto;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+}
+
+.manual-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.88em;
+}
+
+.manual-table thead {
+  background-color: #F8FAFC;
+  border-bottom: 1px solid #CBD5E1;
+}
+
+.manual-table th {
+  padding: 0.75em 1em;
+  font-weight: 700;
+  color: #334155;
+  font-size: 0.82em;
+  letter-spacing: 0.03em;
+}
+
+.manual-table td {
+  padding: 0.85em 1em;
+  border-bottom: 1px solid #E2E8F0;
+  color: #334155;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.manual-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.manual-table tbody tr:hover {
+  background-color: #F8FAFC;
+}
+
+/* ==========================================================================
+   PAGINACIÓN INFERIOR
+   ========================================================================== */
+.pagination-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2em;
+  margin-top: 3.5em;
+  padding-top: 1.5em;
+  border-top: 1px solid #E2E8F0;
+}
+
+.pagination-card {
+  flex: 1;
+  padding: 1em 1.2em;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.pagination-card.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background-color: #F8FAFC;
+}
+
+.pagination-card.active-card:hover {
+  border-color: #0284C7;
+  background-color: #F0F9FF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.pagination-direction {
+  font-size: 0.72em;
+  font-weight: 700;
+  color: #64748B;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25em;
+}
+
+.pagination-title {
+  font-size: 0.92em;
+  font-weight: 600;
+  color: #0369A1;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .topbar-center {
+    display: none;
+  }
+
+  .mobile-toggle-btn {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    height: 100vh;
+    z-index: 100;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.5);
+    z-index: 90;
+  }
+
+  .sidebar-backdrop.active {
+    display: block;
+  }
+
+  .main-content {
+    padding: 1.8em 1.5em;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-title, .brand-divider {
+    display: none;
+  }
+
+  .doc-title {
+    font-size: 1.5em;
+  }
+
+  .pagination-footer {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   LISTA DE PASOS SECUENCIALES (ESTILO MICROSOFT LEARN)
+   ========================================================================== */
+.step-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85em;
+  margin: 1.2em 0 1.6em 0;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85em;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 0.85em 1.1em;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: #0284C7;
+  color: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  font-weight: 700;
+  margin-top: 0.1em;
+}
+
+.step-body {
+  font-size: 0.88em;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.step-body strong {
+  color: #0F172A;
+}
+/* ==========================================================================
+   LISTA DESCRIPTIVA DE CARACTERÍSTICAS
+   ========================================================================== */
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  margin: 1.2em 0 1.6em 0;
+}
+
+.feature-item {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-left: 3px solid #0284C7;
+  border-radius: 4px;
+  padding: 0.75em 1.1em;
+  font-size: 0.88em;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.feature-item strong {
+  color: #0F172A;
+}
+
+/* ==========================================================================
+   REFERENCIAS VISUALES DE ACCIONES (TARJETAS INDIVIDUALES EN LISTA)
+   ========================================================================== */
+.visual-actions-section {
+  margin-top: 2.5em;
+}
+
+.visual-actions-header {
+  margin-bottom: 1.2em;
+}
+
+.visual-actions-title {
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.25em;
+}
+
+.visual-actions-subtitle {
+  font-size: 0.85em;
+  color: #64748B;
+}
+
+.action-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+}
+
+.action-card-item {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 1.1em 1.25em 1.35em 1.25em;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.action-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  margin-bottom: 1em;
+}
+
+.action-card-title {
+  font-size: 0.95em;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.action-card-desc {
+  font-size: 0.84em;
+  color: #64748B;
+}
+
+.action-screenshot-box {
+  width: 100%;
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.action-preview-img {
+  width: 100%;
+  max-width: 620px;       /* Ancho óptimo para que los recortes de tabla no se estiren */
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06);
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* ==========================================================================
+   PLACEHOLDERS Y CONTENEDORES DE CAPTURAS
+   ========================================================================== */
+.screenshot-container {
+  width: 100%;
+  margin: 1.5em 0;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  background-color: #F8FAFC;
+  overflow: hidden;
+}
+
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #F8FAFC;
+}
+
+.action-preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.fallback-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5em 1.5em;
+  text-align: center;
+  gap: 0.5em;
+}
+
+.placeholder-icon {
+  font-size: 2em;
+}
+
+.placeholder-title {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #334155;
+}
+
+.placeholder-subtitle {
+  font-size: 0.82em;
+  color: #64748B;
+  max-width: 32em;
+}
+
+/* ==========================================================================
+   CALLOUT BOX (AVISOS IMPORTANTES)
+   ========================================================================== */
+.callout-box {
+  display: flex;
+  gap: 1em;
+  background-color: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  border-left: 4px solid #0284C7;
+  border-radius: 6px;
+  padding: 1.1em 1.3em;
+  margin: 1.8em 0;
+}
+
+.callout-icon {
+  flex-shrink: 0;
+  margin-top: 0.1em;
+}
+
+.callout-title {
+  font-size: 0.95em;
+  font-weight: 700;
+  color: #0369A1;
+  margin-bottom: 0.3em;
+}
+
+.callout-text {
+  font-size: 0.88em;
+  color: #334155;
+  line-height: 1.5;
+  margin: 0;
+}

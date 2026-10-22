@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.3 Mantenimiento de Aplicaciones - DSI GERENCIAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       CABECERA GLOBAL (TOPBAR)
+       ========================================================================== -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      
+      <!-- Izquierda: Marca y Logotipo -->
+      <div class="topbar-left">
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Abrir menú de navegación">☰</button>
+        <div class="brand-group">
+          <div class="brand-logo">DSI SAC</div>
+          <div class="brand-divider"></div>
+          <div class="brand-title">PORTAL DE ADMINISTRACION</div>
+          <span class="brand-badge">DOCS v1.0</span>
+        </div>
+      </div>
+
+      <!-- Centro: Buscador Global con atajo Ctrl+K -->
+      <div class="topbar-center">
+        <div class="search-box-global">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Buscar en la documentación..." id="globalSearchInput">
+          <kbd class="shortcut-badge">Ctrl+K</kbd>
+        </div>
+      </div>
+
+      <!-- Derecha: Estado del servicio, Enlace de Soporte y Avatar Neutro en SVG -->
+      <div class="topbar-right">
+        <div class="service-status">
+          <span class="status-indicator"></span>
+          <span>🟢 En línea</span>
+        </div>
+        <a href="#soporte" class="support-anchor">Soporte Técnico DSI SAC</a>
+        <div class="user-avatar" title="Usuario del Sistema">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       LAYOUT PRINCIPAL DE 2 COLUMNAS
+       ========================================================================== -->
+  <div class="layout-container">
+
+    <!-- COLUMNA 1: SIDEBAR IZQUIERDO (300px FIJO) -->
+    <aside class="sidebar" id="sidebar">
+      
+      <div class="sidebar-search-area">
+        <input type="text" id="sidebarFilter" placeholder="Filtrar por sección...">
+      </div>
+
+      <div class="sidebar-root-title">▼ DSI GERENCIAL - MANUAL DE USUARIO</div>
+
+      <!-- 0. GENERALIDADES -->
+      <div class="nav-category" data-group="cat-0">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 0. GENERALIDADES
+          </button>
+          <ul class="category-links" id="cat-0">
+          <li>
+            <a href="index.html" class="nav-item">
+              <span class="bullet">•</span> 0.0 ¿Qué es DSI GERENCIAL?
+            </a>
+          </li>
+          <li>
+            <a href="01-login.html" class="nav-item">
+              <span class="bullet">•</span> 0.1 Login e inicio de sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 1. BOTONES Y HOME -->
+     <div class="nav-category" data-group="cat-1">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 1. BOTONES Y HOME
+          </button>
+          <ul class="category-links" id="cat-1">
+          <li>
+            <a href="10-botones-tablas.html" class="nav-item">
+              <span class="bullet">•</span> 1.0 Barra Superior, Botones y Controles de Tabla
+            </a>
+          </li>
+          <li>
+            <a href="11-corporacion.html" class="nav-item">
+              <span class="bullet">•</span> 1.1 Clientes por Corporación
+            </a>
+          </li>
+          <li>
+            <a href="12-vps.html" class="nav-item">
+              <span class="bullet">•</span> 1.2 Clientes por VPS
+            </a>
+          </li>
+          <li>
+            <a href="13-ftp.html" class="nav-item">
+              <span class="bullet">•</span> 1.3 FTP del DSINET
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. ALERTA -->
+      <div class="nav-category" data-group="cat-2">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 2. ALERTA
+          </button>
+          <ul class="category-links" id="cat-2">
+          <li>
+            <a href="21-alertas-cpe.html" class="nav-item">
+              <span class="bullet">•</span> 2.1 Responsables Alerta CPE
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. MANTENIMIENTOS (GRUPO DESPLEGADO Y 3.3 ACTIVE) -->
+      <div class="nav-category" data-group="cat-3">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 3. MANTENIMIENTOS
+          </button>
+          <ul class="category-links" id="cat-3">
+          <li>
+            <a href="31-corporaciones.html" class="nav-item">
+              <span class="bullet">•</span> 3.1 Mantenimiento de Corporaciones
+            </a>
+          </li>
+          <li>
+            <a href="32-empresas.html" class="nav-item">
+              <span class="bullet">•</span> 3.2 Mantenimiento de Empresas
+            </a>
+          </li>
+          <li>
+            <a href="33-aplicaciones.html" class="nav-item active">
+              <span class="bullet">•</span> 3.3 Mantenimiento de Aplicaciones
+            </a>
+          </li>
+          <li>
+            <a href="34-usuarios.html" class="nav-item">
+              <span class="bullet">•</span> 3.4 Mantenimiento de Usuarios
+            </a>
+          </li>
+          <li>
+            <a href="35-usuarios-app.html" class="nav-item">
+              <span class="bullet">•</span> 3.5 Usuarios por Aplicación
+            </a>
+          </li>
+          <li>
+            <a href="36-usuarios-empresa.html" class="nav-item">
+              <span class="bullet">•</span> 3.6 Usuarios por Empresa
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- Fondo tenue para dispositivos móviles -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- COLUMNA 2: ÁREA DE CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+      <!-- Breadcrumbs oficiales -->
+      <nav class="breadcrumb-trail" aria-label="Migas de pan">
+        <a href="index.html">Docs</a>
+        <span class="separator">/</span>
+        <a href="31-corporaciones.html">3. MANTENIMIENTOS</a>
+        <span class="separator">/</span>
+        <span class="active-crumb">3.3 Mantenimiento de Aplicaciones</span>
+      </nav>
+
+      <!-- 1. ENCABEZADO Y METADATOS -->
+      <header class="doc-header">
+        <div class="doc-meta-tags">
+          <span class="meta-tag badge-section">GESTIÓN DE APLICACIONES Y ACCESOS</span>
+          <span class="meta-tag">Sección 3.3</span>
+          <span class="meta-tag">Última revisión: Octubre 2024</span>
+          <span class="meta-tag">Lectura estimada: 7 min</span>
+          <span class="meta-tag badge-access">Nivel: Administración / Seguridad</span>
+        </div>
+        <h1 class="doc-title">3.3 Mantenimiento de Aplicaciones</h1>
+        <p class="doc-intro">
+          Consola central para registrar, auditar y gestionar el catálogo de aplicaciones, servicios web y sistemas satélite integrados con la plataforma DSI GERENCIAL.
+        </p>
+      </header>
+
+      <!-- Recuadro destacado: Ruta de Acceso -->
+      <div class="callout-box" style="margin-bottom: 2em;">
+        <div class="callout-icon">📍</div>
+        <div class="callout-body">
+          <div class="callout-title">Ruta de Acceso al Módulo</div>
+          <p>
+            Desde la barra superior, despliega el menú <strong>Mantenimientos</strong> y haz clic en la opción <strong>Aplicaciones</strong>.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. PANTALLA 1: ESPECIFICACIÓN TÉCNICA DE LA GRILLA DE APLICACIONES -->
+      <section class="content-section">
+        <h2 class="section-heading">1. Especificación Técnica de la Grilla de Aplicaciones</h2>
+        <p class="section-description">
+          Vista panorámica donde se listan los sistemas habilitados, su identificador único de plataforma, los enlaces de servicio y los estados de operación.
+        </p>
+
+        <!-- ESPACIO 1: IMAGEN DE LA GRILLA PRINCIPAL -->
+        <div class="screenshot-container">
+          <div class="img-placeholder" data-img-ref="grilla-principal-aplicaciones" style="width: 100%; min-height: 22em; flex-direction: column; padding: 2em 1.5em; text-align: center;">
+            <img src="Imagenes/Mantenimientos/33-grilla-principal-aplicaciones.png" alt="Pantalla principal de Mantenimiento de Aplicaciones" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+            <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.4em;">
+              <span class="placeholder-icon">💻</span>
+              <div class="placeholder-title">[Espacio reservado: Captura completa de la Grilla de Mantenimiento de Aplicaciones]</div>
+              <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-grilla-principal-aplicaciones.png</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla Completa de Columnas de la Grilla -->
+        <div class="table-responsive-wrapper">
+          <table class="manual-table">
+            <thead>
+              <tr>
+                <th style="width: 20%;">CAMPO / COLUMNA</th>
+                <th style="width: 16%;">CONTROL</th>
+                <th style="width: 18%;">ESTADO / VALOR</th>
+                <th style="width: 46%;">PROPÓSITO OPERATIVO Y REGLA DE NEGOCIO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Nombre / Nombre Corto</strong></td>
+                <td>Texto Alfanumérico</td>
+                <td>Cadena Descriptiva</td>
+                <td>Denominación completa y acrónimo del aplicativo integrado (ej. ADMIN DEV, PCE beta, SIRCE).</td>
+              </tr>
+              <tr>
+                <td><strong>Client Id</strong></td>
+                <td>Código Criptográfico</td>
+                <td>GUID / Alfanumérico</td>
+                <td>Identificador unívoco del cliente para la validación de tokens y conexiones autorizadas.</td>
+              </tr>
+              <tr>
+                <td><strong>Direccion</strong></td>
+                <td>URL / Endpoint</td>
+                <td>Protocolo HTTP/HTTPS</td>
+                <td>Dominio base o ruta permitida donde se ejecutan los servicios autorizados de la aplicación.</td>
+              </tr>
+              <tr>
+                <td><strong>Scopes</strong></td>
+                <td>Parámetro de Acceso</td>
+                <td><code>openid|profile</code></td>
+                <td>Alcance de privilegios concedidos para consumo de identidades de usuario.</td>
+              </tr>
+              <tr>
+                <td><strong>PKCE</strong></td>
+                <td>Parámetro Booleano</td>
+                <td>Sí / No</td>
+                <td>Exigencia de validación criptográfica de código de autorización para aplicaciones web y móviles.</td>
+              </tr>
+              <tr>
+                <td><strong>Estado</strong></td>
+                <td>Badge de Estado</td>
+                <td>Activo / Anulado</td>
+                <td>Indica si el aplicativo se encuentra habilitado para recibir solicitudes de acceso.</td>
+              </tr>
+              <tr>
+                <td><strong>Acciones</strong></td>
+                <td>Botonera Contextual</td>
+                <td>5 Comandos por Fila</td>
+                <td>Acceso directo a ficha técnica, edición de parámetros, anulación, opciones y roles.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 3. DETALLE DE BOTONES, MODALES Y ACCIONES OPERATIVAS -->
+      <section class="content-section">
+        <h2 class="section-heading">2. Detalle de Botones, Modales y Acciones Operativas</h2>
+        <p class="section-description">
+          Documentación técnica paso a paso de cada ventana modal, comando superior y acción contextual por fila.
+        </p>
+
+        <!-- BOTÓN: + NUEVO (ALTA DE APLICACIÓN) -->
+        <article class="content-section" style="margin-top: 1.5em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin-bottom: 0.4em;">Botón: + Nuevo (Alta de Aplicación)</h3>
+          <p class="section-description">
+            Abre el formulario modal para registrar un nuevo aplicativo en el catálogo central, definiendo credenciales y enlaces permitidos.
+          </p>
+
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-nueva-aplicacion" style="width: 100%; min-height: 18em; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-modal-nueva-aplicacion.png" alt="Modal Crear Nueva Aplicación" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🪟</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Crear Nueva Aplicación]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-modal-nueva-aplicacion.png</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive-wrapper">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th style="width: 28%;">CAMPO / CONTROL</th>
+                  <th style="width: 18%;">TIPO</th>
+                  <th style="width: 14%;">REQ</th>
+                  <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Nombre / Nombre Corto</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Texto</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Denominación formal y sigla breve de la aplicación.</td>
+                </tr>
+                <tr>
+                  <td><strong>URLs (App / Auth / Redirect)</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>URL</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Enlace base, ruta de acceso y URL de redirección post-login.</td>
+                </tr>
+                <tr>
+                  <td><strong>Client ID / Secret</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Criptográfico</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Identificador unívoco y clave secreta de vinculación.</td>
+                </tr>
+                <tr>
+                  <td><strong>Scopes / Grants</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Parámetros</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Permisos (<code>openid|profile</code>) y flujo de autorización.</td>
+                </tr>
+                <tr>
+                  <td><strong>Usa PKCE</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Checkbox</td>
+                  <td>No</td>
+                  <td>Habilita el protocolo seguro de intercambio de código.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cerrar / Guardar</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Botones</td>
+                  <td>—</td>
+                  <td>Cancela la operación o confirma el registro del nuevo aplicativo.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- ACCIÓN DE FILA: FICHA TÉCNICA -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin-bottom: 0.4em;">Acción de Fila: Ficha Técnica (Documentación)</h3>
+          <p class="section-description">
+            Abre el visor de documentación donde se auditan los parámetros generales, llaves públicas y detalles de conexión del servicio.
+          </p>
+
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-ficha-tecnica" style="width: 100%; min-height: 14em; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-modal-ficha-tecnica.png" alt="Visor de Ficha Técnica de Aplicación" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">📄</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Ficha Técnica / Documentación]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-modal-ficha-tecnica.png</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ACCIÓN DE FILA: MODIFICAR PARÁMETROS (LÁPIZ AZUL) -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em;">
+            <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0;">
+              Acción de Fila: Modificar Parámetros (Lápiz Azul)
+            </h3>
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: #0284C7; border-radius: 50%;"></span>
+          </div>
+
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Habilita la edición de la dirección URL, nombre corto o directivas criptográficas del aplicativo seleccionado.
+          </p>
+
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-editar-aplicacion" style="width: 100%; min-height: 220px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-modal-editar-aplicacion.png" alt="Modal Editar Parámetros de Aplicación" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">✏️</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Editar Parámetros de Aplicación]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-modal-editar-aplicacion.png</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive-wrapper">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th style="width: 28%;">CAMPO / CONTROL</th>
+                  <th style="width: 18%;">TIPO</th>
+                  <th style="width: 14%;">REQ</th>
+                  <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Nombre / Nombre Corto</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Precargado</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Actualiza la denominación o acrónimo del sistema.</td>
+                </tr>
+                <tr>
+                  <td><strong>URLs (App / Auth / Redirect)</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Precargado</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Modifica los endpoints y redirecciones autorizadas.</td>
+                </tr>
+                <tr>
+                  <td><strong>Client ID / Secret</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Parámetros</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Credenciales de enlace autorizadas.</td>
+                </tr>
+                <tr>
+                  <td><strong>Scopes / PKCE</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Configuración</td>
+                  <td>Sí / No</td>
+                  <td>Alcance de tokens y validación de seguridad.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cerrar / Guardar</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Botones</td>
+                  <td>—</td>
+                  <td>Descarta o confirma los cambios efectuados.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- ACCIÓN DE FILA: ANULAR APLICACIÓN (DIANA NARANJA) -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em;">
+            <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0;">
+              Anular aplicación (Diana Naranja)
+            </h3>
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: #F97316; border-radius: 50%;"></span>
+          </div>
+
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Permite dar de baja a la aplicación mas no la elimina de la base de datos.
+          </p>
+
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-anular-aplicacion" style="width: 100%; min-height: 180px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-modal-anular-aplicacion.png" alt="Confirmación para anular aplicación" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🎯</span>
+                <div class="placeholder-title">[Espacio reservado: Diálogo de Anulación de Aplicación]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-modal-anular-aplicacion.png</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ACCIÓN DE FILA: OPCIONES DE APLICACIÓN (LISTA AZUL) -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em;">
+            <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0;">
+              Acción de Fila: Opciones de aplicación (Lista Azul)
+            </h3>
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: #0284C7; border-radius: 50%;"></span>
+          </div>
+
+          <p class="section-description" style="margin: 0 0 0.5em 0;">
+            Nos manda a una pantalla donde están las diferentes opciones de la aplicación que se señaló.
+          </p>
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            <strong>Opciones relacionadas a las aplicaciones:</strong> Podremos ver una pantalla con todas las opciones que hay en una aplicación; en el sistema se observará que esta aplicación puede tener más de 50 opciones (o funcionalidades). Los botones principales cumplen la misma dinámica de trabajo que en pantallas anteriores.
+          </p>
+
+          <div class="screenshot-container" style="margin-bottom: 1.5em;">
+            <div class="img-placeholder" data-img-ref="pantalla-opciones-aplicacion" style="width: 100%; min-height: 220px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-pantalla-opciones-aplicacion.png" alt="Pantalla de Opciones Relacionadas a la Aplicación" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">📑</span>
+                <div class="placeholder-title">[Espacio reservado: Grilla de Opciones Relacionadas a la Aplicación]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-pantalla-opciones-aplicacion.png</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUB-BOTÓN + NUEVO (OPCIÓN) -->
+          <h4 style="font-size: 1.05em; font-weight: 700; color: #0F172A; margin: 1.5em 0 0.4em 0;">
+            Botón + Nuevo (Crear Opción)
+          </h4>
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Permite crear una nueva opción a la empresa señalada.
+          </p>
+
+          <div class="screenshot-container" style="margin-bottom: 1.5em;">
+            <div class="img-placeholder" data-img-ref="modal-crear-opcion" style="width: 100%; min-height: 200px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-modal-crear-opcion.png" alt="Modal Crear Opción" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">➕</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Crear Nueva Opción]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-modal-crear-opcion.png</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive-wrapper" style="margin-bottom: 2em;">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th style="width: 28%;">CAMPO / CONTROL</th>
+                  <th style="width: 18%;">TIPO</th>
+                  <th style="width: 14%;">REQ</th>
+                  <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Nombre Opción / Mostrar</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Texto</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Código interno y nombre visible en el menú.</td>
+                </tr>
+                <tr>
+                  <td><strong>Padre</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Desplegable</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Menú superior del que depende (-- Sin padre --).</td>
+                </tr>
+                <tr>
+                  <td><strong>Código Externo</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Texto</td>
+                  <td>No</td>
+                  <td>Identificador o ruta en sistemas externos.</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Es multiempresa?</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Toggle</td>
+                  <td>No</td>
+                  <td>Define si funciona en múltiples razones sociales.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cerrar / Guardar</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Botones</td>
+                  <td>—</td>
+                  <td>Cancela o registra la nueva opción.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- SUB-BOTÓN EDITAR OPCIÓN -->
+          <h4 style="font-size: 1.05em; font-weight: 700; color: #0F172A; margin: 1.5em 0 0.4em 0;">
+            Botón Editar Opción
+          </h4>
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Permite editar los campos de la "Opción de la aplicación", en este caso tenemos la opción de Anular empresa damos clic en el botón editar y podremos modificar en caso se requiera.
+          </p>
+
+          <div class="screenshot-container" style="margin-bottom: 1.5em;">
+            <div class="img-placeholder" data-img-ref="modal-editar-opcion" style="width: 100%; min-height: 200px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-modal-editar-opcion.png" alt="Modal Editar Opción" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">✏️</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Editar Opción]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-modal-editar-opcion.png</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive-wrapper" style="margin-bottom: 2em;">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th style="width: 28%;">CAMPO / CONTROL</th>
+                  <th style="width: 18%;">TIPO</th>
+                  <th style="width: 14%;">REQ</th>
+                  <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Nombre Opción / Mostrar</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Precargado</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Permite corregir el nombre o título visible.</td>
+                </tr>
+                <tr>
+                  <td><strong>Padre / Código Ext.</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Configuración</td>
+                  <td>Sí / No</td>
+                  <td>Reasigna el menú superior o enlace externo.</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Es multiempresa?</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Toggle</td>
+                  <td>No</td>
+                  <td>Habilita o restringe a una sola empresa.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cerrar / Guardar</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Botones</td>
+                  <td>—</td>
+                  <td>Descarta o actualiza la opción de menú.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- SUB-BOTÓN ANULAR OPCIÓN -->
+          <h4 style="font-size: 1.05em; font-weight: 700; color: #0F172A; margin: 1.5em 0 0.4em 0;">
+            Botón Anular Opción
+          </h4>
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Botón que permite dar de baja una opción, mas no la elimina del sistema.
+          </p>
+
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-anular-opcion" style="width: 100%; min-height: 180px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-modal-anular-opcion.png" alt="Confirmación Anular Opción" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">❌</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Confirmación Anular Opción]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-modal-anular-opcion.png</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ACCIÓN DE FILA: ROLES (ESCUDO AZUL) -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em;">
+            <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0;">
+              Acción de Fila: Roles (Escudo Azul)
+            </h3>
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: #0284C7; border-radius: 50%;"></span>
+          </div>
+
+          <p class="section-description" style="margin: 0 0 0.5em 0;">
+            Abre una pantalla donde están todos los Roles relacionados a la aplicación, por ejemplo: Analista, Administrador, etc.
+          </p>
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            En la pantalla hay botones ya vistos anteriormente que cumplen las mismas funciones de gestión.
+          </p>
+
+          <div class="screenshot-container" style="margin-bottom: 1.5em;">
+            <div class="img-placeholder" data-img-ref="pantalla-roles-aplicacion" style="width: 100%; min-height: 220px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-pantalla-roles-aplicacion.png" alt="Pantalla de Roles Relacionados a la Aplicación" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🛡️</span>
+                <div class="placeholder-title">[Espacio reservado: Pantalla de Roles de la Aplicación]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-pantalla-roles-aplicacion.png</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUB-BOTÓN + NUEVO (ROL) -->
+          <h4 style="font-size: 1.05em; font-weight: 700; color: #0F172A; margin: 1.5em 0 0.4em 0;">
+            Botón + Nuevo (Crear Rol)
+          </h4>
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Permite agregar nuevos roles a las aplicaciones, por ejemplo: Administrador, analista, etc.
+          </p>
+
+          <div class="screenshot-container" style="margin-bottom: 1.5em;">
+            <div class="img-placeholder" data-img-ref="modal-crear-rol" style="width: 100%; min-height: 200px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-modal-crear-rol.png" alt="Modal Crear Nuevo Rol" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">➕</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Crear Nuevo Rol]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-modal-crear-rol.png</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive-wrapper" style="margin-bottom: 2em;">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th style="width: 28%;">CAMPO / CONTROL</th>
+                  <th style="width: 18%;">TIPO</th>
+                  <th style="width: 14%;">REQ</th>
+                  <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Descripcion / Mostrar</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Texto</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Nombre y etiqueta oficial del nuevo perfil.</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Es rol Interno?</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Toggle</td>
+                  <td>No</td>
+                  <td>Uso exclusivo de personal de sistemas.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cerrar / Guardar</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Botones</td>
+                  <td>—</td>
+                  <td>Cancela o registra el nuevo rol.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- SUB-BOTÓN EDITAR ROL -->
+          <h4 style="font-size: 1.05em; font-weight: 700; color: #0F172A; margin: 1.5em 0 0.4em 0;">
+            Botón Editar Rol
+          </h4>
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Permite editar los campos del Rol señalado.
+          </p>
+
+          <div class="screenshot-container" style="margin-bottom: 1.5em;">
+            <div class="img-placeholder" data-img-ref="modal-editar-rol" style="width: 100%; min-height: 200px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-modal-editar-rol.png" alt="Modal Editar Rol" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">✏️</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Editar Rol]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-modal-editar-rol.png</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive-wrapper" style="margin-bottom: 2em;">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th style="width: 28%;">CAMPO / CONTROL</th>
+                  <th style="width: 18%;">TIPO</th>
+                  <th style="width: 14%;">REQ</th>
+                  <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Descripcion / Mostrar</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Precargado</td>
+                  <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                  <td>Permite cambiar el nombre del perfil activo.</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Es rol Interno?</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Toggle</td>
+                  <td>No</td>
+                  <td>Modifica si es rol técnico interno o general.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cerrar / Guardar</strong> <span style="color: #0284C7;">›</span></td>
+                  <td>Botones</td>
+                  <td>—</td>
+                  <td>Descarta o persiste la actualización del rol.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- SUB-BOTÓN ASIGNAR OPCIONES -->
+          <h4 style="font-size: 1.05em; font-weight: 700; color: #0F172A; margin: 1.5em 0 0.4em 0;">
+            Botón Asignar Opciones
+          </h4>
+          <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Abre una nueva pantalla donde podremos ver todas las Opciones que tiene un Rol, podemos agregarle o quitarle opciones dentro de esa pantalla.
+          </p>
+
+          <div class="screenshot-container" style="margin-bottom: 1.5em;">
+            <div class="img-placeholder" data-img-ref="pantalla-asignar-opciones" style="width: 100%; min-height: 220px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-pantalla-asignar-opciones.png" alt="Pantalla Asignar Opciones a Rol" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🔏</span>
+                <div class="placeholder-title">[Espacio reservado: Pantalla Asignar Opciones y Permisos a Rol]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-pantalla-asignar-opciones.png</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTONES DE AYUDA RÁPIDA -->
+          <p class="section-description" style="margin: 1.5em 0 0.8em 0;">
+            Al seleccionar los permisos que se requieren hay botones de ayuda rápida como:
+          </p>
+
+          <h5 style="font-size: 0.95em; font-weight: 700; color: #0F172A; margin: 1.2em 0 0.3em 0;">
+            • Botón Guardar permisos:
+          </h5>
+          <p class="section-description" style="margin: 0 0 1em 0;">
+            Guarda los permisos que se agregaron o quitaron a los roles.
+          </p>
+          <div class="screenshot-container" style="margin-bottom: 1.5em;">
+            <div class="img-placeholder" data-img-ref="recorte-guardar-permisos" style="width: 100%; min-height: 120px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-btn-guardar-permisos.png" alt="Botón Guardar Permisos" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">💾</span>
+                <div class="placeholder-title">[Espacio reservado: Recorte Botón Guardar Permisos]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-btn-guardar-permisos.png</div>
+              </div>
+            </div>
+          </div>
+
+          <h5 style="font-size: 0.95em; font-weight: 700; color: #0F172A; margin: 1.2em 0 0.3em 0;">
+            • Botón Seleccionar todo:
+          </h5>
+          <p class="section-description" style="margin: 0 0 1em 0;">
+            Selecciona de manera masiva todos los permisos que existen.
+          </p>
+          <div class="screenshot-container" style="margin-bottom: 1.5em;">
+            <div class="img-placeholder" data-img-ref="recorte-seleccionar-todo" style="width: 100%; min-height: 120px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-btn-seleccionar-todo.png" alt="Botón Seleccionar Todo" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">☑️</span>
+                <div class="placeholder-title">[Espacio reservado: Recorte Botón Seleccionar Todo]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-btn-seleccionar-todo.png</div>
+              </div>
+            </div>
+          </div>
+
+          <h5 style="font-size: 0.95em; font-weight: 700; color: #0F172A; margin: 1.2em 0 0.3em 0;">
+            • Botón Deseleccionar todo:
+          </h5>
+          <p class="section-description" style="margin: 0 0 1em 0;">
+            Quita todas las selecciones de los permisos que estaban marcados.
+          </p>
+          <div class="screenshot-container" style="margin-bottom: 1.5em;">
+            <div class="img-placeholder" data-img-ref="recorte-deseleccionar-todo" style="width: 100%; min-height: 120px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-btn-deseleccionar-todo.png" alt="Botón Deseleccionar Todo" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">◻️</span>
+                <div class="placeholder-title">[Espacio reservado: Recorte Botón Deseleccionar Todo]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-btn-deseleccionar-todo.png</div>
+              </div>
+            </div>
+          </div>
+
+          <h5 style="font-size: 0.95em; font-weight: 700; color: #0F172A; margin: 1.2em 0 0.3em 0;">
+            • Botones de expandir todo y contraer todo:
+          </h5>
+          <p class="section-description" style="margin: 0 0 1em 0;">
+            Ayuda a poder visualizar todos los permisos que existen para esa aplicación y el botón contraer comprime todos los permisos para tener una vista limpia de la pantalla.
+          </p>
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="recorte-expandir-contraer" style="width: 100%; min-height: 120px; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/33-btn-expandir-contraer.png" alt="Botones Expandir y Contraer Todo" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">↕️</span>
+                <div class="placeholder-title">[Espacio reservado: Recorte Botones Expandir y Contraer Todo]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/33-btn-expandir-contraer.png</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Nota Operativa de Aplicaciones -->
+      <div class="callout-box" style="margin-top: 2.5em;">
+        <div class="callout-icon" style="font-size: 1.2em; color: #0284C7;">ℹ️</div>
+        <div class="callout-body">
+          <div class="callout-title" style="color: #0369A1; font-weight: 700;">
+            Nota de Gobierno: Los permisos otorgados a los roles impactan directamente en las pantallas y funciones que los usuarios asignados podrán ejecutar dentro de cada aplicativo del sistema.
+          </div>
+        </div>
+      </div>
+
+      <!-- Paginación Inferior Oficial -->
+      <footer class="pagination-footer" style="margin-top: 3em;">
+        <a href="32-empresas.html" class="pagination-card active-card">
+          <span class="pagination-direction">← ANTERIOR</span>
+          <span class="pagination-title">3.2 Mantenimiento de Empresas</span>
+          <span style="font-size: 0.8em; color: #64748B; margin-top: 0.2em;">Padrón Empresarial</span>
+        </a>
+        <a href="34-usuarios.html" class="pagination-card active-card" style="text-align: right; align-items: flex-end;">
+          <span class="pagination-direction">SIGUIENTE →</span>
+          <span class="pagination-title">3.4 Mantenimiento de Usuarios</span>
+          <span style="font-size: 0.8em; color: #64748B; margin-top: 0.2em;">Cuentas de Acceso</span>
+        </a>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

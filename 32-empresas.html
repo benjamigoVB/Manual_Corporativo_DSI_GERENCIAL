@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.2 Mantenimiento de Empresas - DSI GERENCIAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       CABECERA GLOBAL (TOPBAR)
+       ========================================================================== -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      
+      <!-- Izquierda: Marca y Logotipo -->
+      <div class="topbar-left">
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Abrir menú de navegación">☰</button>
+        <div class="brand-group">
+          <div class="brand-logo">DSI SAC</div>
+          <div class="brand-divider"></div>
+          <div class="brand-title">PORTAL DE ADMINISTRACION</div>
+          <span class="brand-badge">DOCS v1.0</span>
+        </div>
+      </div>
+
+      <!-- Centro: Buscador Global con atajo Ctrl+K -->
+      <div class="topbar-center">
+        <div class="search-box-global">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Buscar en la documentación..." id="globalSearchInput">
+          <kbd class="shortcut-badge">Ctrl+K</kbd>
+        </div>
+      </div>
+
+      <!-- Derecha: Estado del servicio, Enlace de Soporte y Avatar Neutro en SVG -->
+      <div class="topbar-right">
+        <div class="service-status">
+          <span class="status-indicator"></span>
+          <span>🟢 En línea</span>
+        </div>
+        <a href="#soporte" class="support-anchor">Soporte Técnico DSI SAC</a>
+        <div class="user-avatar" title="Usuario del Sistema">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       LAYOUT PRINCIPAL DE 2 COLUMNAS
+       ========================================================================== -->
+  <div class="layout-container">
+
+    <!-- COLUMNA 1: SIDEBAR IZQUIERDO (300px FIJO) -->
+    <aside class="sidebar" id="sidebar">
+      
+      <div class="sidebar-search-area">
+        <input type="text" id="sidebarFilter" placeholder="Filtrar por sección...">
+      </div>
+
+      <div class="sidebar-root-title">▼ DSI GERENCIAL - MANUAL DE USUARIO</div>
+
+      <!-- 0. GENERALIDADES -->
+      <div class="nav-category" data-group="cat-0">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 0. GENERALIDADES
+          </button>
+          <ul class="category-links" id="cat-0">
+          <li>
+            <a href="index.html" class="nav-item">
+              <span class="bullet">•</span> 0.0 ¿Qué es DSI GERENCIAL?
+            </a>
+          </li>
+          <li>
+            <a href="01-login.html" class="nav-item">
+              <span class="bullet">•</span> 0.1 Login e inicio de sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 1. BOTONES Y HOME -->
+      <div class="nav-category" data-group="cat-1">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 1. BOTONES Y HOME
+          </button>
+          <ul class="category-links" id="cat-1">
+          <li>
+            <a href="10-botones-tablas.html" class="nav-item">
+              <span class="bullet">•</span> 1.0 Barra Superior, Botones y Controles de Tabla
+            </a>
+          </li>
+          <li>
+            <a href="11-corporacion.html" class="nav-item">
+              <span class="bullet">•</span> 1.1 Clientes por Corporación
+            </a>
+          </li>
+          <li>
+            <a href="12-vps.html" class="nav-item">
+              <span class="bullet">•</span> 1.2 Clientes por VPS
+            </a>
+          </li>
+          <li>
+            <a href="13-ftp.html" class="nav-item">
+              <span class="bullet">•</span> 1.3 FTP del DSINET
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. ALERTA -->
+      <div class="nav-category" data-group="cat-2">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 2. ALERTA
+          </button>
+          <ul class="category-links" id="cat-2">
+          <li>
+            <a href="21-alertas-cpe.html" class="nav-item">
+              <span class="bullet">•</span> 2.1 Responsables Alerta CPE
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. MANTENIMIENTOS (GRUPO DESPLEGADO Y 3.2 ACTIVE) -->
+      <div class="nav-category" data-group="cat-3">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 3. MANTENIMIENTOS
+          </button>
+          <ul class="category-links" id="cat-3">
+          <li>
+            <a href="31-corporaciones.html" class="nav-item">
+              <span class="bullet">•</span> 3.1 Mantenimiento de Corporaciones
+            </a>
+          </li>
+          <li>
+            <a href="32-empresas.html" class="nav-item active">
+              <span class="bullet">•</span> 3.2 Mantenimiento de Empresas
+            </a>
+          </li>
+          <li>
+            <a href="33-aplicaciones.html" class="nav-item">
+              <span class="bullet">•</span> 3.3 Mantenimiento de Aplicaciones
+            </a>
+          </li>
+          <li>
+            <a href="34-usuarios.html" class="nav-item">
+              <span class="bullet">•</span> 3.4 Mantenimiento de Usuarios
+            </a>
+          </li>
+          <li>
+            <a href="35-usuarios-app.html" class="nav-item">
+              <span class="bullet">•</span> 3.5 Usuarios por Aplicación
+            </a>
+          </li>
+          <li>
+            <a href="36-usuarios-empresa.html" class="nav-item">
+              <span class="bullet">•</span> 3.6 Usuarios por Empresa
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- Fondo tenue para dispositivos móviles -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- COLUMNA 2: ÁREA DE CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+      <!-- Breadcrumbs oficiales -->
+      <nav class="breadcrumb-trail" aria-label="Migas de pan">
+        <a href="index.html">Docs</a>
+        <span class="separator">/</span>
+        <a href="31-corporaciones.html">3. MANTENIMIENTOS</a>
+        <span class="separator">/</span>
+        <span class="active-crumb">3.2 Mantenimiento de Empresas</span>
+      </nav>
+
+      <!-- 1. ENCABEZADO Y METADATOS -->
+      <header class="doc-header">
+        <div class="doc-meta-tags">
+          <span class="meta-tag badge-section">PADRÓN EMPRESARIAL Y CLIENTES</span>
+          <span class="meta-tag">Sección 3.2</span>
+          <span class="meta-tag">Última revisión: Octubre 2024</span>
+          <span class="meta-tag">Lectura estimada: 6 min</span>
+          <span class="meta-tag badge-access">Nivel: Administración / Configuración</span>
+        </div>
+        <h1 class="doc-title">3.2 Mantenimiento de Empresas</h1>
+        <p class="doc-intro">
+          Consola central para registrar, configurar y auditar el padrón de razones sociales que operan en la plataforma, regulando su RUC fiscal, subordinación a corporaciones, asignación de aplicaciones y estados de vigencia.
+        </p>
+      </header>
+
+      <!-- Recuadro destacado: Ruta de Acceso -->
+      <div class="callout-box" style="margin-bottom: 2em;">
+        <div class="callout-icon">📍</div>
+        <div class="callout-body">
+          <div class="callout-title">Ruta de Acceso al Módulo</div>
+          <p>
+            Desde la barra superior, despliega el menú <strong>Mantenimientos</strong> y haz clic en la opción <strong>Empresas</strong>.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. PANTALLA 1: ESPECIFICACIÓN TÉCNICA DE LA GRILLA DE EMPRESAS -->
+      <section class="content-section">
+        <h2 class="section-heading">1. Especificación Técnica de la Grilla de Empresas</h2>
+        <p class="section-description">
+          Consola principal donde se visualiza el inventario completo de razones sociales, sus identificadores tributarios, sedes matrices y la botonera de acciones por fila.
+        </p>
+
+        <!-- ESPACIO 1: IMAGEN DE LA GRILLA PRINCIPAL -->
+        <div class="screenshot-container">
+          <div class="img-placeholder" data-img-ref="grilla-mantenimiento-empresas" style="width: 100%; min-height: 22em; flex-direction: column; padding: 2em 1.5em; text-align: center;">
+            <img src="Imagenes/Mantenimientos/grilla-mantenimiento-empresas.png" alt="Mantenimiento de Empresas - Grilla Principal" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+            <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.4em;">
+              <span class="placeholder-icon">🏢</span>
+              <div class="placeholder-title">[Espacio reservado: Captura de la Grilla Principal de Empresas]</div>
+              <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/grilla-mantenimiento-empresas.png</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla Completa de Columnas de la Grilla -->
+        <div class="table-responsive-wrapper">
+          <table class="manual-table">
+            <thead>
+              <tr>
+                <th style="width: 18%;">CAMPO / COLUMNA</th>
+                <th style="width: 16%;">CONTROL</th>
+                <th style="width: 18%;">ESTADO / VALOR</th>
+                <th style="width: 48%;">PROPÓSITO OPERATIVO Y REGLA DE NEGOCIO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ruc</strong></td>
+                <td>Numérico</td>
+                <td>11 Dígitos Tributarios</td>
+                <td>Número oficial de Registro Único de Contribuyentes para cruce fiscal y comprobantes.</td>
+              </tr>
+              <tr>
+                <td><strong>Razon Social</strong></td>
+                <td>Texto Alfanumérico</td>
+                <td>Denominación Legal</td>
+                <td>Nombre formal completo de la persona jurídica registrado ante SUNAT.</td>
+              </tr>
+              <tr>
+                <td><strong>Nombre Corto</strong></td>
+                <td>Texto Alfanumérico</td>
+                <td>Alias Comercial</td>
+                <td>Acrónimo o sigla breve representativa para visualización rápida en selectores (ej. DSI SAC).</td>
+              </tr>
+              <tr>
+                <td><strong>Corporacion</strong></td>
+                <td>Selector Vinculado</td>
+                <td>Grupo Económico</td>
+                <td>Conglomerado corporativo al cual se subordina la empresa (o <em>--SIN CORPORACION--</em>).</td>
+              </tr>
+              <tr>
+                <td><strong>Principal</strong></td>
+                <td>Checkbox (Casilla)</td>
+                <td>Marcado / Desmarcado</td>
+                <td>Identifica si la razón social ejerce como sede matriz titular dentro de su grupo corporativo.</td>
+              </tr>
+              <tr>
+                <td><strong>Estado</strong></td>
+                <td>Badge de Estado</td>
+                <td>Activo / Inactivo</td>
+                <td>Determina si la empresa se encuentra habilitada operativamente para transaccionar en el sistema.</td>
+              </tr>
+              <tr>
+                <td><strong>Acciones</strong></td>
+                <td>Botonera Contextual</td>
+                <td>5 Comandos por Fila</td>
+                <td>Herramientas de configuración: Reporte Excel, Alerta CPE, Editar, Apps Relacionadas e Inactivar.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 3. DETALLE DE BOTONES, MODALES Y ACCIONES OPERATIVAS -->
+      <section class="content-section">
+        <h2 class="section-heading">2. Detalle de Botones, Modales y Acciones Operativas</h2>
+        <p class="section-description">
+          Documentación técnica paso a paso de cada ventana modal, comando superior y acción contextual por fila.
+        </p>
+
+        <!-- BOTÓN + NUEVO (ALTA DE EMPRESA) -->
+        <article class="content-section" style="margin-top: 1.5em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin-bottom: 0.4em;">Botón: + Nuevo (Alta de Empresa)</h3>
+          <p class="section-description">
+            Abre la ventana modal para dar de alta una nueva empresa registrando RUC, razón social, corporación y correos de contacto.
+          </p>
+
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-nuevo-empresa" style="width: 100%; min-height: 18em; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/modal-nuevo-empresa.png" alt="Modal Nuevo Empresa" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🪟</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Nuevo - Alta de Empresa]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/modal-nuevo-empresa.png</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive-wrapper">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%;">CAMPO / CONTROL</th>
+                  <th style="width: 20%;">TIPO</th>
+                  <th style="width: 15%;">REQ.</th>
+                  <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>RUC</strong></td>
+                  <td>Numérico (11 dígitos)</td>
+                  <td>Sí (*)</td>
+                  <td>Identificador fiscal único registrado ante la administración tributaria.</td>
+                </tr>
+                <tr>
+                  <td><strong>Nombre / Razón Social</strong></td>
+                  <td>Texto libre</td>
+                  <td>Sí (*)</td>
+                  <td>Denominación formal legal completa de la empresa.</td>
+                </tr>
+                <tr>
+                  <td><strong>Nombre Corto</strong></td>
+                  <td>Texto libre</td>
+                  <td>Sí (*)</td>
+                  <td>Sigla o nombre comercial reducido para filtros en cabeceras.</td>
+                </tr>
+                <tr>
+                  <td><strong>Email / Email Notificación</strong></td>
+                  <td>Correo electrónico</td>
+                  <td>Condicional</td>
+                  <td>Buzón corporativo institucional y cuenta para envío de cobros o contingencias.</td>
+                </tr>
+                <tr>
+                  <td><strong>Corporación</strong></td>
+                  <td>Selector desplegable</td>
+                  <td>Sí (*)</td>
+                  <td>Grupo económico al cual se incorpora la razón social.</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Es Principal?</strong></td>
+                  <td>Interruptor (Toggle)</td>
+                  <td>No</td>
+                  <td>Define si esta empresa actúa como matriz operativa de su holding.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cerrar / Guardar</strong></td>
+                  <td>Botones de Acción</td>
+                  <td>—</td>
+                  <td>Descarta la creación o registra la nueva empresa en la base de datos.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- FICHA TÉCNICA (EXPORTAR USUARIOS A EXCEL) -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin-bottom: 0.4em;">Acción de Fila: Ficha Técnica (Exportar Usuarios a Excel)</h3>
+          <p class="section-description">
+            Icono verde con formato de hoja de cálculo que descarga la plantilla consolidada de usuarios y parámetros de la razón social seleccionada.
+          </p>
+
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="exportar-usuarios-empresa" style="width: 100%; min-height: 14em; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/exportar-usuarios-empresa.png" alt="Exportación de Usuarios a Excel" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">📄</span>
+                <div class="placeholder-title">[Espacio reservado: Descarga Ficha Técnica y Usuarios Excel]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/exportar-usuarios-empresa.png</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ACCIÓN: ALERTA CPE (CAMPANA AMARILLA) -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin-bottom: 0.4em;">Acción de Fila: Alerta CPE / Notificación de Deuda (Campana Amarilla)</h3>
+          <p class="section-description">
+            Despliega la ventana emergente para emitir avisos de contingencia o notificaciones de cobro a los responsables vinculados a la empresa.
+          </p>
+
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-notificacion-deuda" style="width: 100%; min-height: 18em; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/modal-notificacion-deuda.png" alt="Modal Notificación de Deuda" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🔔</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Alerta CPE / Notificación de Deuda]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/modal-notificacion-deuda.png</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive-wrapper">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%;">CAMPO / CONTROL</th>
+                  <th style="width: 20%;">TIPO</th>
+                  <th style="width: 15%;">REQ.</th>
+                  <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Escribe el mensaje</strong></td>
+                  <td>Área de texto</td>
+                  <td>Sí (*)</td>
+                  <td>Detalle del aviso, glosa de contingencia o recordatorio de pago (máximo 500 caracteres).</td>
+                </tr>
+                <tr>
+                  <td><strong>Fecha Vencimiento</strong></td>
+                  <td>Selector de calendario</td>
+                  <td>Sí (*)</td>
+                  <td>Fecha límite programada para atender la advertencia o regularizar el comprobante.</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Está activo?</strong></td>
+                  <td>Interruptor (Toggle)</td>
+                  <td>No</td>
+                  <td>Habilita o pausa el despacho automático del mensaje en la pantalla del usuario.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cancelar / Confirmar</strong></td>
+                  <td>Botones de Acción</td>
+                  <td>—</td>
+                  <td>Aborta el envío o programa la notificación activa en el sistema.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- ==========================================================================
+     BLOQUE: MODIFICAR REGISTRO Y RELACIONAR APLICACIONES (ACCIONES DE FILA)
+     ========================================================================== -->
+
+        <!-- 1. Acción de Fila: Modificar Registro (Lápiz Azul) -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+        
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em;">
+            <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0;">
+            Acción de Fila: Modificar Registro (Lápiz Azul)
+            </h3>
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: #0284C7; border-radius: 50%;"></span>
+        </div>
+        
+        <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Abre la ventana para editar la denominación, nombre corto o cambiar la corporación asignada, los campos con asterisco son Obligatorios.
+        </p>
+
+        <!-- Contenedor Captura: Modal Editar sobre la Grilla de Empresas -->
+        <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-editar-empresa" style="width: 100%; min-height: 220px; flex-direction: column; padding: 1.5em; text-align: center;">
+            <img src="Imagenes/Mantenimientos/modal-editar-empresa.png" alt="Modal Editar Empresa" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+            <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">✏️</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Editar - Modificar Empresa]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/modal-editar-empresa.png</div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Tabla Técnica: Ficha de Campos del Modal Editar -->
+        <div class="table-responsive-wrapper">
+            <table class="manual-table">
+            <thead>
+                <tr>
+                <th style="width: 28%;">CAMPO / CONTROL</th>
+                <th style="width: 18%;">TIPO</th>
+                <th style="width: 14%;">REQ</th>
+                <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td><strong>RUC / Razón Social</strong> <span style="color: #0284C7;">›</span></td>
+                <td>Precargado</td>
+                <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                <td>Datos fiscales oficiales a actualizar.</td>
+                </tr>
+                <tr>
+                <td><strong>Nombre Corto / Emails</strong> <span style="color: #0284C7;">›</span></td>
+                <td>Precargado</td>
+                <td>Sí / No</td>
+                <td>Sigla y correos corporativos vigentes.</td>
+                </tr>
+                <tr>
+                <td><strong>Corporación / Principal</strong> <span style="color: #0284C7;">›</span></td>
+                <td>Selector</td>
+                <td>Sí / No</td>
+                <td>Reasigna grupo o condición de matriz.</td>
+                </tr>
+                <tr>
+                <td><strong>Cerrar / Guardar</strong> <span style="color: #0284C7;">›</span></td>
+                <td>Botones</td>
+                <td>—</td>
+                <td>Descarta o persiste los cambios editados.</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+        </article>
+
+
+        <!-- ==========================================================================
+     BLOQUE: RELACIONAR APLICACIONES EN ADELANTE (3.2 MANTENIMIENTO DE EMPRESAS)
+     ========================================================================== -->
+
+        <!-- 1. Acción de Fila: Relacionar aplicaciones (Lista Gris) -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em;">
+            <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0;">
+            Acción de Fila: Relacionar aplicaciones (Lista Gris)
+            </h3>
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: #64748B; border-radius: 50%;"></span>
+        </div>
+        
+        <p class="section-description" style="margin: 0 0 1.25em 0;">Al dar clic al botón gris nos mandará a otra pantalla, relacionada con la empresa cuya fila se seleccionó.
+        En esta ventana se podrá ver las aplicaicones relacionadas a dicha empresa, a las aplicaciones se les puede asignar nuevos usuarios o quitarlos, tambien se puede anular dicha aplicacion de la empresa.
+        </p>
+
+        <!-- Espacio: Recorte de Fila con botón Relacionar Aplicaciones -->
+        <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="accion-relacionar-aplicaciones" style="width: 100%; min-height: 140px; flex-direction: column; padding: 1.5em; text-align: center;">
+            <img src="Imagenes/Mantenimientos/accion-relacionar-aplicaciones.png" alt="Acción Relacionar Aplicaciones en Mantenimiento de Empresas" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+            <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🔗</span>
+                <div class="placeholder-title">[Espacio reservado: Recorte de Fila con botón Relacionar Aplicación]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/accion-relacionar-aplicaciones.png</div>
+            </div>
+            </div>
+        </div>
+        </article>
+
+        <!-- 2. Subpantalla: Aplicaciones Relacionadas a la Empresa -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em;">
+            <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0;">
+            Aplicaciones relacionadas a la empresa
+            </h3>
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: #0284C7; border-radius: 50%;"></span>
+        </div>
+
+        <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Consola donde se auditan los sistemas y aplicaciones satélite autorizadas para consumir recursos bajo la razón social activa. Los botones que vemos en la pantalla tienen la misma funcionalidad que los botones que se han visto anteriormente.
+        </p>
+
+        <!-- Espacio: Pantalla completa de Aplicaciones Relacionadas -->
+        <div class="screenshot-container" style="margin-bottom: 1.5em;">
+            <div class="img-placeholder" data-img-ref="pantalla-aplicaciones-relacionadas-empresa" style="width: 100%; min-height: 220px; flex-direction: column; padding: 1.5em; text-align: center;">
+            <img src="Imagenes/Mantenimientos/pantalla-aplicaciones-relacionadas-empresa.png" alt="Aplicaciones Relacionadas a la Empresa" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+            <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">💻</span>
+                <div class="placeholder-title">[Espacio reservado: Pantalla de Aplicaciones Relacionadas a la Empresa]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/pantalla-aplicaciones-relacionadas-empresa.png</div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Botón Agregar Aplicación -->
+        <h4 style="font-size: 1.05em; font-weight: 700; color: #0F172A; margin: 1.5em 0 0.4em 0;">
+            Botón Agregar Aplicación
+        </h4>
+        <p class="section-description" style="margin: 0 0 1.25em 0;">
+            Permite agregar una nueva aplicación a la empresa señalada. Despliega la ventana modal <strong>«Nueva relación»</strong> para vincular software del catálogo general.
+        </p>
+
+        <!-- Espacio: Modal Nueva Relación (Agregar Aplicación) -->
+        <div class="screenshot-container" style="margin-bottom: 1.5em;">
+            <div class="img-placeholder" data-img-ref="modal-nueva-relacion-aplicacion" style="width: 100%; min-height: 200px; flex-direction: column; padding: 1.5em; text-align: center;">
+            <img src="Imagenes/Mantenimientos/modal-nueva-relacion-aplicacion.png" alt="Modal Nueva relación - Agregar Aplicación" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+            <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🪟</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Nueva Relación - Agregar Aplicación]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/modal-nueva-relacion-aplicacion.png</div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Ficha de Campos: Modal Nueva Relación -->
+        <div class="table-responsive-wrapper" style="margin-bottom: 2em;">
+            <table class="manual-table">
+            <thead>
+                <tr>
+                <th style="width: 28%;">CAMPO / CONTROL</th>
+                <th style="width: 18%;">TIPO</th>
+                <th style="width: 14%;">REQ</th>
+                <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td><strong>Aplicación</strong> <span style="color: #0284C7;">›</span></td>
+                <td>Desplegable</td>
+                <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+                <td>Software o servicio satélite a habilitar.</td>
+                </tr>
+                <tr>
+                <td><strong>Cerrar / Guardar</strong> <span style="color: #0284C7;">›</span></td>
+                <td>Botones</td>
+                <td>—</td>
+                <td>Cancela o confirma el enlace con la empresa.</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+       <!-- ==========================================================================
+     BLOQUE: DETALLE DE APLICACIONES RELACIONADAS, ROLES Y ACCIONES (3 IMÁGENES)
+     ========================================================================== -->
+
+<!-- ==========================================================================
+     IMAGEN 1: BOTÓN ANULAR RELACIÓN, BOTÓN TIPO LISTA Y PANTALLA DE ROLES
+     ========================================================================== -->
+
+<!-- 1. Botón Anular relación -->
+<article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+  <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0 0 0.4em 0;">
+    Botón Anular relación
+  </h3>
+  <p class="section-description" style="margin: 0 0 1.25em 0; color: #475569; font-size: 0.95em;">
+    Botón que permite dar de baja una aplicación, mas no la elimina del sistema.
+  </p>
+
+  <!-- Espacio: Captura Modal Anular Relación con flecha indicadora -->
+  <div class="screenshot-container" style="margin-bottom: 2em;">
+    <div class="img-placeholder" data-img-ref="modal-anular-relacion-aplicacion" style="width: 100%; min-height: 180px; flex-direction: column; padding: 1.5em; text-align: center;">
+      <img src="Imagenes/Mantenimientos/modal-anular-relacion-aplicacion.png" alt="Botón Anular Relación de Aplicación" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+      <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+        <span class="placeholder-icon">⚠️</span>
+        <div class="placeholder-title">[Espacio reservado: Modal Anular Relación]</div>
+        <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/modal-anular-relacion-aplicacion.png</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Botón tipo Lista -->
+  <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 1.5em 0 0.4em 0;">
+    Botón tipo Lista
+  </h3>
+  <p class="section-description" style="margin: 0 0 1.25em 0; color: #475569; font-size: 0.95em;">
+    Nos abre otra pantalla donde a un usuario podemos darle un nuevo rol en la aplicación que se señaló.
+  </p>
+
+  <!-- Espacio: Captura Botón tipo Lista en la fila de Aplicación -->
+  <div class="screenshot-container" style="margin-bottom: 1.5em;">
+    <div class="img-placeholder" data-img-ref="fila-aplicacion-boton-lista" style="width: 100%; min-height: 120px; flex-direction: column; padding: 1.5em; text-align: center;">
+      <img src="Imagenes/Mantenimientos/fila-aplicacion-boton-lista.png" alt="Acceso con Botón tipo Lista" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+      <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+        <span class="placeholder-icon">📋</span>
+        <div class="placeholder-title">[Espacio reservado: Botón tipo Lista en la Fila]</div>
+        <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/fila-aplicacion-boton-lista.png</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-description" style="margin: 0 0 1.25em 0; color: #475569; font-size: 0.95em;">
+    Nos abre otra pantalla donde a un usuario podemos darle un nuevo rol en la aplicación que se señaló.
+  </p>
+
+  <!-- Espacio: Captura Pantalla Grilla de Usuarios y Roles en la Aplicación -->
+  <div class="screenshot-container" style="margin-bottom: 1.5em;">
+    <div class="img-placeholder" data-img-ref="pantalla-roles-usuarios-aplicacion" style="width: 100%; min-height: 220px; flex-direction: column; padding: 1.5em; text-align: center;">
+      <img src="Imagenes/Mantenimientos/pantalla-roles-usuarios-aplicacion.png" alt="Pantalla de asignación de roles a los usuarios para las aplicaciones" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+      <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+        <span class="placeholder-icon">👥</span>
+        <div class="placeholder-title">[Espacio reservado: Pantalla Grilla de Roles por Aplicación]</div>
+        <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/pantalla-roles-usuarios-aplicacion.png</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Pantalla de asignación de roles -->
+  <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 1.5em 0 0.4em 0;">
+    Pantalla de asignación de roles a los usuarios para las aplicaciones.
+  </h3>
+  <p class="section-description" style="margin: 0 0 1.25em 0; color: #475569; font-size: 0.95em;">
+    Al igual que las anteriores pantallas se puede añadir nuevos usuarios y darles un rol con el botón nuevo.
+  </p>
+</article>
+
+<!-- ==========================================================================
+     IMAGEN 2: BOTÓN NUEVO, BOTÓN CAMBIAR ROL Y BOTÓN ANULAR
+     ========================================================================== -->
+
+<!-- 1. Botón Nuevo (Asignación de Rol) -->
+<article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+  <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0 0 0.4em 0;">
+    Botón Nuevo
+  </h3>
+  <p class="section-description" style="margin: 0 0 1.25em 0; color: #475569; font-size: 0.95em;">
+    Aparecerá una ventana donde debemos seleccionar al usuario registrado en el sistema y asignarle un rol.
+  </p>
+
+  <!-- Espacio: Captura Modal Asignación de Rol -->
+  <div class="screenshot-container" style="margin-bottom: 1.5em;">
+    <div class="img-placeholder" data-img-ref="modal-asignacion-rol-usuario" style="width: 100%; min-height: 220px; flex-direction: column; padding: 1.5em; text-align: center;">
+      <img src="Imagenes/Mantenimientos/modal-asignacion-rol-usuario.png" alt="Modal Asignación de Rol" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+      <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+        <span class="placeholder-icon">🪟</span>
+        <div class="placeholder-title">[Espacio reservado: Modal Asignación de Rol]</div>
+        <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/modal-asignacion-rol-usuario.png</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabla Técnica: Ficha de Campos del Modal Asignación de Rol -->
+  <div class="table-responsive-wrapper" style="margin-bottom: 2em;">
+    <table class="manual-table">
+      <thead>
+        <tr>
+          <th style="width: 28%;">CAMPO / CONTROL</th>
+          <th style="width: 18%;">TIPO</th>
+          <th style="width: 14%;">REQ</th>
+          <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Usuario</strong> <span style="color: #0284C7;">›</span></td>
+          <td>Desplegable</td>
+          <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+          <td>Colaborador al que se le dará acceso.</td>
+        </tr>
+        <tr>
+          <td><strong>Rol</strong> <span style="color: #0284C7;">›</span></td>
+          <td>Desplegable</td>
+          <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+          <td>Nivel de permiso (Usuario, Administrador).</td>
+        </tr>
+        <tr>
+          <td><strong>Cerrar / Guardar</strong> <span style="color: #0284C7;">›</span></td>
+          <td>Botones</td>
+          <td>—</td>
+          <td>Cancela o guarda el acceso en la aplicación.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2. Botón Cambiar Rol (tipo escudo) -->
+  <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 1.5em 0 0.4em 0;">
+    Botón Cambiar Rol (tipo escudo)
+  </h3>
+  <p class="section-description" style="margin: 0 0 1.25em 0; color: #475569; font-size: 0.95em;">
+    Este botón permite cambiar el rol del usuario señalado.
+  </p>
+
+  <!-- Espacio: Captura Modal Modificar Rol de Usuario -->
+  <div class="screenshot-container" style="margin-bottom: 1.5em;">
+    <div class="img-placeholder" data-img-ref="modal-modificar-rol-usuario" style="width: 100%; min-height: 200px; flex-direction: column; padding: 1.5em; text-align: center;">
+      <img src="Imagenes/Mantenimientos/modal-modificar-rol-usuario.png" alt="Modal Modificar Rol de Usuario" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+      <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+        <span class="placeholder-icon">🛡️</span>
+        <div class="placeholder-title">[Espacio reservado: Modal Modificar Rol de Usuario]</div>
+        <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/modal-modificar-rol-usuario.png</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabla Técnica: Ficha de Campos del Modal Modificar Rol de Usuario -->
+  <div class="table-responsive-wrapper" style="margin-bottom: 2em;">
+    <table class="manual-table">
+      <thead>
+        <tr>
+          <th style="width: 28%;">CAMPO / CONTROL</th>
+          <th style="width: 18%;">TIPO</th>
+          <th style="width: 14%;">REQ</th>
+          <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Nuevo Rol</strong> <span style="color: #0284C7;">›</span></td>
+          <td>Texto / Selector</td>
+          <td><strong style="color: #DC2626;">Sí (*)</strong></td>
+          <td>Perfil o jerarquía que reemplazará al actual.</td>
+        </tr>
+        <tr>
+          <td><strong>Cerrar / Editar Rol</strong> <span style="color: #0284C7;">›</span></td>
+          <td>Botones</td>
+          <td>—</td>
+          <td>Descarta o aplica el nuevo rol de acceso.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3. Botón Anular de la pantalla de roles -->
+  <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 1.5em 0 0.4em 0;">
+    Botón Anular
+  </h3>
+  <p class="section-description" style="margin: 0 0 1.25em 0; color: #475569; font-size: 0.95em;">
+    Cumple la misma funcion de los botones que se mencionó en las pantallas anteriores.
+  </p>
+</article>
+
+<!-- ==========================================================================
+     IMAGEN 3: ACCIÓN INACTIVAR EMPRESA (ASPA ROJA), NOTA Y PAGINACIÓN
+     ========================================================================== -->
+
+<!-- Acción de Fila: Inactivar Empresa (Aspa Roja) -->
+<article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em;">
+    <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin: 0;">
+      Acción de Fila: Inactivar Empresa (Aspa Roja)
+    </h3>
+    <span style="display: inline-block; width: 10px; height: 10px; background-color: #EF4444; border-radius: 50%;"></span>
+  </div>
+
+  <p class="section-description" style="margin: 0 0 1.25em 0; color: #475569; font-size: 0.95em;">
+    Diálogo de confirmación para suspender o dar de baja a la empresa del portal activo.
+  </p>
+
+  <!-- Espacio: Captura Modal Anular Empresa con flecha indicadora -->
+  <div class="screenshot-container" style="margin-bottom: 2em;">
+    <div class="img-placeholder" data-img-ref="inactivar-empresa-confirmacion" style="width: 100%; min-height: 180px; flex-direction: column; padding: 1.5em; text-align: center;">
+      <img src="Imagenes/Mantenimientos/inactivar-empresa-confirmacion.png" alt="Confirmación Inactivar Empresa (Aspa Roja)" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+      <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+        <span class="placeholder-icon">🚫</span>
+        <div class="placeholder-title">[Espacio reservado: Modal Anular Empresa]</div>
+        <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/inactivar-empresa-confirmacion.png</div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- Nota de Jerarquía Matriz -->
+<div class="callout-box" style="margin-top: 2.5em;">
+  <div class="callout-icon" style="font-size: 1.2em; color: #0284C7;">ℹ️</div>
+  <div class="callout-body">
+    <div class="callout-title" style="color: #0369A1; font-weight: 700;">
+      Nota de Jerarquía Matriz: La designación de una razón social como "Principal" confiere facultades de consolidación operativa para reportes fiscales agrupados ante la entidad tributaria SUNAT.
+    </div>
+  </div>
+</div>
+
+<!-- Paginación Inferior Oficial -->
+<footer class="pagination-footer" style="margin-top: 3em;">
+  <a href="31-corporaciones.html" class="pagination-card active-card">
+    <span class="pagination-direction">← ANTERIOR</span>
+    <span class="pagination-title">3.1 Mantenimiento de Corporaciones</span>
+    <span style="font-size: 0.8em; color: #64748B; margin-top: 0.2em;">Grupos Económicos</span>
+  </a>
+  <a href="33-aplicaciones.html" class="pagination-card active-card" style="text-align: right; align-items: flex-end;">
+    <span class="pagination-direction">SIGUIENTE →</span>
+    <span class="pagination-title">3.3 Mantenimiento de Sucursales</span>
+    <span style="font-size: 0.8em; color: #64748B; margin-top: 0.2em;">Puntos de Emisión</span>
+  </a>
+</footer>
+
+</main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

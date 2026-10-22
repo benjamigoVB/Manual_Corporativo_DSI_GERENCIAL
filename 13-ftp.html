@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.3 FTP del DSI - DSI GERENCIAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       CABECERA GLOBAL (TOPBAR)
+       ========================================================================== -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      
+      <!-- Izquierda: Marca y Logotipo -->
+      <div class="topbar-left">
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Abrir menú">☰</button>
+        <div class="brand-group">
+          <div class="brand-logo">DSI SAC</div>
+          <div class="brand-divider"></div>
+          <div class="brand-title">PORTAL DE ADMINISTRACION</div>
+          <span class="brand-badge">DOCS v1.0</span>
+        </div>
+      </div>
+
+      <!-- Centro: Buscador Global con atajo Ctrl+K -->
+      <div class="topbar-center">
+        <div class="search-box-global">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Buscar en la documentación..." id="globalSearchInput">
+          <kbd class="shortcut-badge">Ctrl+K</kbd>
+        </div>
+      </div>
+
+      <!-- Derecha: Estado, Soporte y Avatar Neutro en SVG -->
+      <div class="topbar-right">
+        <div class="service-status">
+          <span class="status-indicator"></span>
+          <span>En línea</span>
+        </div>
+        <a href="#soporte" class="support-anchor">Soporte Técnico DSI SAC</a>
+        <div class="user-avatar" title="Usuario de Sistema">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       LAYOUT PRINCIPAL DE 2 COLUMNAS
+       ========================================================================== -->
+  <div class="layout-container">
+
+    <!-- COLUMNA 1: SIDEBAR IZQUIERDO -->
+    <aside class="sidebar" id="sidebar">
+      
+      <div class="sidebar-search-area">
+        <input type="text" id="sidebarFilter" placeholder="Filtrar por sección...">
+      </div>
+
+      <div class="sidebar-root-title">▼ DSI GERENCIAL - MANUAL DE USUARIO</div>
+
+      <!-- 0. GENERALIDADES -->
+      <div class="nav-category" data-group="cat-0">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 0. GENERALIDADES
+          </button>
+          <ul class="category-links" id="cat-0">
+          <li>
+            <a href="index.html" class="nav-item">
+              <span class="bullet">•</span> 0.0 ¿Qué es DSI GERENCIAL?
+            </a>
+          </li>
+          <li>
+            <a href="01-login.html" class="nav-item">
+              <span class="bullet">•</span> 0.1 Login e inicio de sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 1. BOTONES Y HOME (Abierto y con 1.3 Activo) -->
+      <div class="nav-category" data-group="cat-1">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 1. BOTONES Y HOME
+          </button>
+          <ul class="category-links" id="cat-1">
+          <li>
+            <a href="10-botones-tablas.html" class="nav-item">
+              <span class="bullet">•</span> 1.0 Barra Superior, Botones y Controles de Tabla
+            </a>
+          </li>
+          <li>
+            <a href="11-corporacion.html" class="nav-item">
+              <span class="bullet">•</span> 1.1 Clientes por Corporación
+            </a>
+          </li>
+          <li>
+            <a href="12-vps.html" class="nav-item">
+              <span class="bullet">•</span> 1.2 Clientes por VPS
+            </a>
+          </li>
+          <li>
+            <a href="13-ftp.html" class="nav-item active">
+              <span class="bullet">•</span> 1.3 FTP del DSINET
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. ALERTA -->
+      <div class="nav-category" data-group="cat-2">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 2. ALERTA
+          </button>
+          <ul class="category-links" id="cat-2">
+          <li>
+            <a href="21-alertas-cpe.html" class="nav-item">
+              <span class="bullet">•</span> 2.1 Responsables Alerta CPE
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. MANTENIMIENTOS -->
+      <div class="nav-category" data-group="cat-3">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 3. MANTENIMIENTOS
+          </button>
+          <ul class="category-links" id="cat-3">
+          <li>
+            <a href="31-corporaciones.html" class="nav-item">
+              <span class="bullet">•</span> 3.1 Mantenimiento de Corporaciones
+            </a>
+          </li>
+          <li>
+            <a href="32-empresas.html" class="nav-item">
+              <span class="bullet">•</span> 3.2 Mantenimiento de Empresas
+            </a>
+          </li>
+          <li>
+            <a href="33-aplicaciones.html" class="nav-item">
+              <span class="bullet">•</span> 3.3 Mantenimiento de Aplicaciones
+            </a>
+          </li>
+          <li>
+            <a href="34-usuarios.html" class="nav-item">
+              <span class="bullet">•</span> 3.4 Mantenimiento de Usuarios
+            </a>
+          </li>
+          <li>
+            <a href="35-usuarios-app.html" class="nav-item">
+              <span class="bullet">•</span> 3.5 Usuarios por Aplicación
+            </a>
+          </li>
+          <li>
+            <a href="36-usuarios-empresa.html" class="nav-item">
+              <span class="bullet">•</span> 3.6 Usuarios por Empresa
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- Fondo oscuro en móviles -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- COLUMNA 2: CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+      <!-- Breadcrumbs oficiales -->
+      <nav class="breadcrumb-trail" aria-label="Migas de pan">
+        <a href="index.html">Docs</a>
+        <span class="separator">/</span>
+        <a href="10-botones-tablas.html">1. BOTONES Y HOME</a>
+        <span class="separator">/</span>
+        <span class="active-crumb">1.3 FTP del DSI</span>
+      </nav>
+
+      <!-- Encabezado de Documento -->
+      <header class="doc-header">
+        <div class="doc-meta-tags">
+          <span class="meta-tag badge-section">CONEXIONES Y ALMACENAMIENTO</span>
+          <span class="meta-tag">Sección: 1.3</span>
+          <span class="meta-tag">Última revisión: Octubre 2024</span>
+          <span class="meta-tag">Lectura estimada: 3 min</span>
+          <span class="meta-tag badge-access">Nivel: Operativo / Redes</span>
+        </div>
+        <h1 class="doc-title">1.3 Distribución de Servidores FTP por Fuente</h1>
+        <p class="doc-intro">
+          Consola de auditoría de conectividad remota para supervisar las rutas y servidores FTP asignados al intercambio de información, respaldo de bases de datos y transmisión de comprobantes. Integra estados de control para notificar oportunamente la ausencia de servidores enlazados.
+        </p>
+      </header>
+
+      <!-- Contenedor de Captura Principal de Pantalla -->
+      <div class="screenshot-container" style="margin-bottom: 2em;">
+          <img src="IMAGENES/1.HOME/1.3FTP/image 59.png" 
+               alt="Ventana Principal de Acceso" 
+               style="width: 100%; height: auto; display: block; border-radius: 8px;">
+        </div>
+
+        <div class="table-responsive-wrapper">
+          <!-- Tu tabla aquí -->
+        </div>
+
+      <!-- Sección 1: Comportamiento y Estado Vacío -->
+      <section class="content-section">
+        <h2 class="section-heading">1. Comportamiento y Notificación de Estado Vacío (Empty State)</h2>
+        <p class="section-description">
+          Esta vista supervisa las carpetas y rutas remotas configuradas para guardar respaldos y transmitir comprobantes electrónicos:
+        </p>
+
+        <div class="features-list">
+          <div class="feature-item">
+            <strong>Propósito del Monitoreo FTP:</strong> Permite revisar qué carpetas o servidores remotos de transferencia se encuentran vinculados a cada fuente de datos o empresa cliente para transferencias periódicas de archivos.
+          </div>
+          <div class="feature-item">
+            <strong>Detección de Inactividad (Sin Conexiones):</strong> Si no existen carpetas o servidores registrados y activos en el entorno seleccionado, el sistema muestra el icono de 'carpeta con cruz' junto al mensaje informativo <em>"No se encontraron registros de servidores FTP activos"</em>.
+          </div>
+          <div class="feature-item">
+            <strong>Impacto Operativo:</strong> Informa al responsable del sistema y soporte técnico sobre la falta de carpetas externas disponibles para copias de seguridad automáticas o envío de comprobantes fuera de la red local.
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección 2: Ficha Técnica de Elementos de Pantalla -->
+      <section class="content-section">
+        <h2 class="section-heading">2. Ficha Técnica de Elementos de Pantalla</h2>
+        <p class="section-description">
+          A continuación se especifican los componentes visuales de esta pantalla y las reglas de negocio que los rigen:
+        </p>
+
+        <div class="table-responsive-wrapper">
+          <table class="manual-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">COMPONENTE / ELEMENTO</th>
+                <th style="width: 20%;">TIPO DE ELEMENTO</th>
+                <th style="width: 20%;">FORMATO / DATO</th>
+                <th style="width: 35%;">PROPÓSITO OPERATIVO Y REGLA DE NEGOCIO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cabecera Modular</strong></td>
+                <td>Título Principal Centrado</td>
+                <td>Texto Fijo Mayúsculas</td>
+                <td>Rótulo oficial de la sección: 'DISTRIBUCIÓN DE SERVIDORES FTP POR FUENTE'.</td>
+              </tr>
+              <tr>
+                <td><strong>Icono de Advertencia</strong></td>
+                <td>Elemento Gráfico</td>
+                <td>Icono Vectorial (📁✖)</td>
+                <td>Notificación visual directa que alerta sobre la ausencia de servicios o carpetas de almacenamiento remoto enlazadas.</td>
+              </tr>
+              <tr>
+                <td><strong>Etiqueta de Estado Vacío</strong></td>
+                <td>Mensaje de Control</td>
+                <td>Texto Descriptivo</td>
+                <td>Informa de manera clara y explícita: <em>"No se encontraron registros de servidores FTP activos"</em>.</td>
+              </tr>
+              <tr>
+                <td><strong>Directorio de Transferencia</strong></td>
+                <td>Parámetro de Red</td>
+                <td>Protocolo FTP / FTPS</td>
+                <td>Ruta de red y credenciales de acceso para copias de seguridad remotas y migración periódica de archivos del sistema.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Cuadro de Aviso / Callout Box -->
+      <div class="callout-box">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-body">
+          <div class="callout-title">Advertencia Operativa</div>
+          <p>
+            La presencia del estado vacío en este módulo requiere coordinar con el área de soporte técnico o infraestructura la parametrización de las rutas FTP corporativas, garantizando que los respaldos periódicos y la custodia externa de datos se ejecuten sin interrupciones.
+          </p>
+        </div>
+      </div>
+
+      <!-- Paginación Inferior Conectada al Flujo Oficial -->
+      <footer class="pagination-footer">
+        <a href="12-vps.html" class="pagination-card active-card">
+          <span class="pagination-direction">← ANTERIOR</span>
+          <span class="pagination-title">1.2 Clientes por VPS</span>
+        </a>
+        <a href="21-alertas-cpe.html" class="pagination-card active-card" style="text-align: right; align-items: flex-end;">
+          <span class="pagination-direction">SIGUIENTE →</span>
+          <span class="pagination-title">2.1 Responsables Alerta CPE</span>
+        </a>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

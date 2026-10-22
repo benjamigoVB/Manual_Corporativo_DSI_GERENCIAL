@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.1 Mantenimiento de Corporaciones - DSI GERENCIAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       CABECERA GLOBAL (TOPBAR)
+       ========================================================================== -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      
+      <!-- Izquierda: Marca y Logotipo -->
+      <div class="topbar-left">
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Abrir menú de navegación">☰</button>
+        <div class="brand-group">
+          <div class="brand-logo">DSI SAC</div>
+          <div class="brand-divider"></div>
+          <div class="brand-title">PORTAL DE ADMINISTRACION</div>
+          <span class="brand-badge">DOCS v1.0</span>
+        </div>
+      </div>
+
+      <!-- Centro: Buscador Global con atajo Ctrl+K -->
+      <div class="topbar-center">
+        <div class="search-box-global">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Buscar en la documentación..." id="globalSearchInput">
+          <kbd class="shortcut-badge">Ctrl+K</kbd>
+        </div>
+      </div>
+
+      <!-- Derecha: Estado, Enlace de Soporte y Avatar Neutro en SVG -->
+      <div class="topbar-right">
+        <div class="service-status">
+          <span class="status-indicator"></span>
+          <span>🟢 En línea</span>
+        </div>
+        <a href="#soporte" class="support-anchor">Soporte Técnico DSI SAC</a>
+        <div class="user-avatar" title="Usuario del Sistema">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       LAYOUT PRINCIPAL DE 2 COLUMNAS
+       ========================================================================== -->
+  <div class="layout-container">
+
+    <!-- COLUMNA 1: SIDEBAR IZQUIERDO (300px FIJO) -->
+    <aside class="sidebar" id="sidebar">
+      
+      <div class="sidebar-search-area">
+        <input type="text" id="sidebarFilter" placeholder="Filtrar por sección...">
+      </div>
+
+      <div class="sidebar-root-title">▼ DSI GERENCIAL - MANUAL DE USUARIO</div>
+
+      <!-- 0. GENERALIDADES -->
+      <div class="nav-category" data-group="cat-0">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 0. GENERALIDADES
+          </button>
+          <ul class="category-links" id="cat-0">
+          <li>
+            <a href="index.html" class="nav-item">
+              <span class="bullet">•</span> 0.0 ¿Qué es DSI GERENCIAL?
+            </a>
+          </li>
+          <li>
+            <a href="01-login.html" class="nav-item">
+              <span class="bullet">•</span> 0.1 Login e inicio de sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 1. BOTONES Y HOME -->
+      <div class="nav-category" data-group="cat-1">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 1. BOTONES Y HOME
+          </button>
+          <ul class="category-links" id="cat-1">
+          <li>
+            <a href="10-botones-tablas.html" class="nav-item">
+              <span class="bullet">•</span> 1.0 Barra Superior, Botones y Controles de Tabla
+            </a>
+          </li>
+          <li>
+            <a href="11-corporacion.html" class="nav-item">
+              <span class="bullet">•</span> 1.1 Clientes por Corporación
+            </a>
+          </li>
+          <li>
+            <a href="12-vps.html" class="nav-item">
+              <span class="bullet">•</span> 1.2 Clientes por VPS
+            </a>
+          </li>
+          <li>
+            <a href="13-ftp.html" class="nav-item">
+              <span class="bullet">•</span> 1.3 FTP del DSINET
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. ALERTA -->
+      <div class="nav-category" data-group="cat-2">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 2. ALERTA
+          </button>
+          <ul class="category-links" id="cat-2">
+          <li>
+            <a href="21-alertas-cpe.html" class="nav-item">
+              <span class="bullet">•</span> 2.1 Responsables Alerta CPE
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. MANTENIMIENTOS (GRUPO DESPLEGADO Y 3.1 ACTIVE) -->
+       <div class="nav-category" data-group="cat-3">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 3. MANTENIMIENTOS
+          </button>
+          <ul class="category-links" id="cat-3">
+          <li>
+            <a href="31-corporaciones.html" class="nav-item active">
+              <span class="bullet">•</span> 3.1 Mantenimiento de Corporaciones
+            </a>
+          </li>
+          <li>
+            <a href="32-empresas.html" class="nav-item">
+              <span class="bullet">•</span> 3.2 Mantenimiento de Empresas
+            </a>
+          </li>
+          <li>
+            <a href="33-aplicaciones.html" class="nav-item">
+              <span class="bullet">•</span> 3.3 Mantenimiento de Aplicaciones
+            </a>
+          </li>
+          <li>
+            <a href="34-usuarios.html" class="nav-item">
+              <span class="bullet">•</span> 3.4 Mantenimiento de Usuarios
+            </a>
+          </li>
+          <li>
+            <a href="35-usuarios-app.html" class="nav-item">
+              <span class="bullet">•</span> 3.5 Usuarios por Aplicación
+            </a>
+          </li>
+          <li>
+            <a href="36-usuarios-empresa.html" class="nav-item">
+              <span class="bullet">•</span> 3.6 Usuarios por Empresa
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- Fondo tenue para dispositivos móviles -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- COLUMNA 2: ÁREA DE CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+      <!-- Migas de pan (Breadcrumbs) -->
+      <nav class="breadcrumb-trail" aria-label="Migas de pan">
+        <a href="index.html">Docs</a>
+        <span class="separator">/</span>
+        <a href="31-corporaciones.html">3. MANTENIMIENTOS</a>
+        <span class="separator">/</span>
+        <span class="active-crumb">3.1 Mantenimiento de Corporaciones</span>
+      </nav>
+
+      <!-- 1. ENCABEZADO Y METADATOS -->
+      <header class="doc-header">
+        <div class="doc-meta-tags">
+          <span class="meta-tag badge-section">TABLAS MAESTRAS Y CATÁLOGOS</span>
+          <span class="meta-tag">Sección 3.1</span>
+          <span class="meta-tag">Última revisión: Octubre 2024</span>
+          <span class="meta-tag">Lectura estimada: 4 min</span>
+          <span class="meta-tag badge-access">Nivel: Administración / Configuración</span>
+        </div>
+        <h1 class="doc-title">3.1 Mantenimiento de Corporaciones</h1>
+        <p class="doc-intro">
+          Consola de configuración para registrar, editar y supervisar los grupos económicos corporativos bajo los cuales se estructuran las razones sociales de los clientes del sistema.
+        </p>
+      </header>
+
+      <!-- Recuadro destacado: Ruta de Acceso -->
+      <div class="callout-box" style="margin-bottom: 2em;">
+        <div class="callout-icon">📍</div>
+        <div class="callout-body">
+          <div class="callout-title">Ruta de Acceso al Módulo</div>
+          <p>
+            En la barra superior de navegación, despliega el menú <strong>Mantenimientos</strong> y haz clic en la subopción <strong>Corporaciones</strong>.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. PANTALLA 1: GRILLA PRINCIPAL DE CORPORACIONES -->
+      <section class="content-section">
+        <h2 class="section-heading">1. Especificación Técnica de la Grilla de Corporaciones</h2>
+        <p class="section-description">
+          Vista panorámica de la cuadrícula donde se visualizan los conglomerados activos, su estado de vigencia y las herramientas de edición y desactivación.
+        </p>
+
+        <!-- ESPACIO 1: IMAGEN DE LA GRILLA PRINCIPAL -->
+        <div class="screenshot-container">
+          <div class="img-placeholder" data-img-ref="grilla-mantenimiento-corporaciones" style="width: 100%; min-height: 20em; flex-direction: column; padding: 2em 1.5em; text-align: center;">
+            <img src="Imagenes/Mantenimientos/grilla-mantenimiento-corporaciones.png" alt="Mantenimiento de Corporaciones - Grilla Principal" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+            <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.4em;">
+              <span class="placeholder-icon">📋</span>
+              <div class="placeholder-title">[Espacio reservado: Captura de la Grilla Principal de Corporaciones]</div>
+              <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/grilla-mantenimiento-corporaciones.png</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla Completa de Especificación Técnica -->
+        <div class="table-responsive-wrapper">
+          <table class="manual-table">
+            <thead>
+              <tr>
+                <th style="width: 20%;">CAMPO / COLUMNA</th>
+                <th style="width: 18%;">TIPO DE CONTROL</th>
+                <th style="width: 18%;">ESTADO / VALOR</th>
+                <th style="width: 44%;">PROPÓSITO OPERATIVO Y REGLA DE NEGOCIO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Nombre</strong></td>
+                <td>Texto Alfanumérico</td>
+                <td>Denominación del Grupo</td>
+                <td>Razón o nombre comercial del conglomerado (ej. GDM, CORSOL, --SIN CORPORACION--).</td>
+              </tr>
+              <tr>
+                <td><strong>Estado</strong></td>
+                <td>Badge de Estado</td>
+                <td>Activo / Inactivo</td>
+                <td>Define si la corporación está habilitada para agrupar clientes o en baja lógica.</td>
+              </tr>
+              <tr>
+                <td><strong>Acciones (Activo)</strong></td>
+                <td>Botones de Fila</td>
+                <td>Modificar / Desactivar</td>
+                <td>Comandos para editar la denominación (Lápiz) o cambiar el estado a inactivo (Aspa Roja).</td>
+              </tr>
+              <tr>
+                <td><strong>Acciones (Inactivo)</strong></td>
+                <td>Botón de Fila</td>
+                <td>Reactivar</td>
+                <td>Comando directo (Flecha Circular) para reincorporar la corporación al estado activo.</td>
+              </tr>
+              <tr>
+                <td><strong>Buscador Superior</strong></td>
+                <td>Input de Búsqueda</td>
+                <td>Búsqueda en vivo</td>
+                <td>Filtro reactivo por coincidencias de texto en el nombre de la corporación.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 3. DETALLE DE BOTONES, MODALES Y ACCIONES OPERATIVAS -->
+      <section class="content-section">
+        <h2 class="section-heading">2. Detalle de Botones, Modales y Acciones Operativas</h2>
+        <p class="section-description">
+          Espacios reservados para documentar los formularios modales y las operaciones contextuales de la cuadrícula.
+        </p>
+
+        <!-- PANTALLA 2: MODAL "NUEVO" -->
+        <article class="content-section" style="margin-top: 1.5em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin-bottom: 0.4em;">Botón: + Nuevo (Alta de Corporación)</h3>
+          <p class="section-description">
+            Abre la ventana modal para ingresar la denominación del nuevo grupo económico.
+          </p>
+
+          <!-- ESPACIO 2: IMAGEN DEL MODAL NUEVO -->
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-nueva-corporacion" style="width: 100%; min-height: 18em; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/modal-nueva-corporacion.png" alt="Modal Nueva Corporación" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🪟</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Nuevo - Alta de Corporación]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/modal-nueva-corporacion.png</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Campos del Modal Nuevo -->
+          <div class="table-responsive-wrapper">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%;">CAMPO / CONTROL</th>
+                  <th style="width: 20%;">TIPO</th>
+                  <th style="width: 15%;">REQ.</th>
+                  <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Nombre</strong></td>
+                  <td>Texto libre</td>
+                  <td>Sí (*)</td>
+                  <td>Nombre del nuevo grupo económico.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cerrar</strong></td>
+                  <td>Botón neutro</td>
+                  <td>—</td>
+                  <td>Cancela y cierra la ventana sin guardar cambios.</td>
+                </tr>
+                <tr>
+                  <td><strong>Guardar</strong></td>
+                  <td>Botón Azul</td>
+                  <td>—</td>
+                  <td>Registra la nueva corporación y la incorpora al listado.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- PANTALLA 3: MODAL "EDITAR" -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin-bottom: 0.4em;">Acción de Fila: Modificar Registro (Lápiz)</h3>
+          <p class="section-description">
+            Despliega el formulario para actualizar el nombre de la corporación seleccionada.
+          </p>
+
+          <!-- ESPACIO 3: IMAGEN DEL MODAL EDITAR -->
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="modal-editar-corporacion" style="width: 100%; min-height: 18em; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/modal-editar-corporacion.png" alt="Modal Editar Corporación" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">✏️</span>
+                <div class="placeholder-title">[Espacio reservado: Modal Editar - Modificar Corporación]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/modal-editar-corporacion.png</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Campos del Modal Editar -->
+          <div class="table-responsive-wrapper">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%;">CAMPO / CONTROL</th>
+                  <th style="width: 20%;">TIPO</th>
+                  <th style="width: 15%;">REQ.</th>
+                  <th style="width: 40%;">DESCRIPCIÓN SENCILLA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Nombre</strong></td>
+                  <td>Texto precargado</td>
+                  <td>Sí (*)</td>
+                  <td>Permite corregir o actualizar la denominación del conglomerado.</td>
+                </tr>
+                <tr>
+                  <td><strong>Cerrar</strong></td>
+                  <td>Botón neutro</td>
+                  <td>—</td>
+                  <td>Descarta los cambios y cierra la ventana.</td>
+                </tr>
+                <tr>
+                  <td><strong>Guardar</strong></td>
+                  <td>Botón Azul</td>
+                  <td>—</td>
+                  <td>Actualiza el nombre en el sistema.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- PANTALLA 4: ANULACIÓN Y REACTIVACIÓN -->
+        <article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+          <h3 style="font-size: 1.15em; font-weight: 700; color: #0F172A; margin-bottom: 0.4em;">Acciones de Fila: Anular (Aspa Roja) y Reactivar (Flecha Circular)</h3>
+          <p class="section-description">
+            Transiciones de estado en la cuadrícula para gestionar la vigencia de las corporaciones sin destruir su historial referencial.
+          </p>
+
+          <!-- ESPACIO 4: IMAGEN DE TRANSICIÓN DE ESTADO (ANULAR Y REACTIVAR) -->
+          <div class="screenshot-container">
+            <div class="img-placeholder" data-img-ref="estado-anular-reactivar-corporacion" style="width: 100%; min-height: 16em; flex-direction: column; padding: 1.5em; text-align: center;">
+              <img src="Imagenes/Mantenimientos/estado-anular-reactivar-corporacion.png" alt="Acciones Anular y Reactivar Corporación" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+              <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+                <span class="placeholder-icon">🔄</span>
+                <div class="placeholder-title">[Espacio reservado: Captura de Transición Anular y Reactivar Corporación]</div>
+                <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/estado-anular-reactivar-corporacion.png</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==========================================================================
+     BLOQUE: ANULACIÓN Y REACTIVACIÓN DE CORPORACIÓN (ACCIONES DE FILA)
+     ========================================================================== -->
+<article class="content-section" style="margin-top: 2em; border-top: 1px solid #E2E8F0; padding-top: 1.5em;">
+
+  <!-- 1. Acción de Fila: Anular Corporación (Aspa Roja) -->
+  <div class="features-list" style="margin-bottom: 1em;">
+    <div class="feature-item" style="display: flex; align-items: flex-start; gap: 0.75em;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background-color: #FEF2F2; color: #EF4444; border-radius: 6px; font-size: 14px; font-weight: bold; flex-shrink: 0;">✕</span>
+      <div>
+        <strong style="color: #0F172A; font-size: 1.05em;">Acción de Fila: Anular Corporación (Aspa Roja)</strong>
+        <p style="margin: 0.25em 0 0 0; color: #475569; font-size: 0.95em;">
+          Cambia el estado de la corporación a 'Inactivo', retirándola de los selectores activos.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor de Capturas: Proceso de Anulación (Fila Activa -> Fila Inactiva) -->
+  <div class="screenshot-container" style="display: flex; flex-direction: column; gap: 1em; margin-bottom: 2.5em;">
+    
+    <!-- Captura Superior: Registro Activo con botón de Anular (Aspa Roja enmarcada) -->
+    <div class="img-placeholder" data-img-ref="corporacion-anular-paso-1" style="width: 100%; min-height: 140px; flex-direction: column; padding: 1em; text-align: center;">
+      <img src="Imagenes/Mantenimientos/corporacion-anular-paso-1.png" alt="Corporación en estado Activo con botón Anular" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+      <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+        <span class="placeholder-icon">📋</span>
+        <div class="placeholder-title">[Espacio reservado: Corporación Activa con acción Anular]</div>
+        <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/corporacion-anular-paso-1.png</div>
+      </div>
+    </div>
+
+    <!-- Captura Inferior: Banner de confirmación 'Anulado' y registro en estado 'Inactivo' -->
+    <div class="img-placeholder" data-img-ref="corporacion-anular-paso-2" style="width: 100%; min-height: 140px; flex-direction: column; padding: 1em; text-align: center;">
+      <img src="Imagenes/Mantenimientos/corporacion-anular-paso-2.png" alt="Confirmación Anulado y estado Inactivo con botón Reactivar" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+      <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+        <span class="placeholder-icon">✅</span>
+        <div class="placeholder-title">[Espacio reservado: Confirmación Anulado y estado Inactivo]</div>
+        <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/corporacion-anular-paso-2.png</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 2. Acción de Fila: Reactivar Corporación (Flecha Circular) -->
+  <div class="features-list" style="margin-bottom: 1em;">
+    <div class="feature-item" style="display: flex; align-items: flex-start; gap: 0.75em;">
+      <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background-color: #F0F9FF; color: #0284C7; border-radius: 6px; font-size: 14px; font-weight: bold; flex-shrink: 0;">🔄</span>
+      <div>
+        <strong style="color: #0F172A; font-size: 1.05em;">Acción de Fila: Reactivar Corporación (Flecha Circular)</strong>
+        <p style="margin: 0.25em 0 0 0; color: #475569; font-size: 0.95em;">
+          Restaura la corporación inactiva al estado 'Activo' con un solo clic.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor de Capturas: Proceso de Reactivación (Fila Inactiva -> Fila Restaurada Activa) -->
+  <div class="screenshot-container" style="display: flex; flex-direction: column; gap: 1em; margin-bottom: 2em;">
+    
+    <!-- Captura Superior: Registro Inactivo con botón de Reactivar (Flecha Circular enmarcada) -->
+    <div class="img-placeholder" data-img-ref="corporacion-reactivar-paso-1" style="width: 100%; min-height: 140px; flex-direction: column; padding: 1em; text-align: center;">
+      <img src="Imagenes/Mantenimientos/corporacion-reactivar-paso-1.png" alt="Corporación en estado Inactivo con botón Reactivar" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+      <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+        <span class="placeholder-icon">🔄</span>
+        <div class="placeholder-title">[Espacio reservado: Corporación Inactiva con acción Reactivar]</div>
+        <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/corporacion-reactivar-paso-1.png</div>
+      </div>
+    </div>
+
+    <!-- Captura Inferior: Registro restablecido en estado 'Activo' con botones de edición -->
+    <div class="img-placeholder" data-img-ref="corporacion-reactivar-paso-2" style="width: 100%; min-height: 140px; flex-direction: column; padding: 1em; text-align: center;">
+      <img src="Imagenes/Mantenimientos/corporacion-reactivar-paso-2.png" alt="Corporación restablecida a estado Activo" class="action-preview-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="max-width: 100%;">
+      <div style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 0.3em;">
+        <span class="placeholder-icon">📋</span>
+        <div class="placeholder-title">[Espacio reservado: Corporación restablecida a Activo]</div>
+        <div class="placeholder-subtext">Archivo esperado: Imagenes/Mantenimientos/corporacion-reactivar-paso-2.png</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 3. Nota de Integridad Referencial -->
+  <div class="callout-box" style="margin-top: 2em;">
+    <div class="callout-icon">💡</div>
+    <div class="callout-body">
+      <div class="callout-title">Nota de Integridad Referencial:</div>
+      <p>
+        La desactivación de una corporación no elimina las razones sociales ya vinculadas, pero previene la asignación de nuevas empresas clientes a dicho grupo comercial hasta su reactivación formal.
+      </p>
+    </div>
+  </div>
+
+</article>
+
+      </section>
+      <!-- 5. PAGINACIÓN INFERIOR -->
+      <footer class="pagination-footer">
+        <a href="21-alertas-cpe.html" class="pagination-card active-card">
+          <span class="pagination-direction">← ANTERIOR</span>
+          <span class="pagination-title">2.1 Responsables Alerta CPE</span>
+        </a>
+        <a href="32-empresas.html" class="pagination-card active-card" style="text-align: right; align-items: flex-end;">
+          <span class="pagination-direction">SIGUIENTE →</span>
+          <span class="pagination-title">3.2 Mantenimiento de Empresas</span>
+        </a>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.2 Clientes por VPS - DSI GERENCIAL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       CABECERA GLOBAL (TOPBAR)
+       ========================================================================== -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      
+      <!-- Izquierda: Marca y Logotipo -->
+      <div class="topbar-left">
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Abrir menú">☰</button>
+        <div class="brand-group">
+          <div class="brand-logo">DSI SAC</div>
+          <div class="brand-divider"></div>
+          <div class="brand-title">PORTAL DE ADMINISTRACION</div>
+          <span class="brand-badge">DOCS v1.0</span>
+        </div>
+      </div>
+
+      <!-- Centro: Buscador Global con atajo Ctrl+K -->
+      <div class="topbar-center">
+        <div class="search-box-global">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Buscar en la documentación..." id="globalSearchInput">
+          <kbd class="shortcut-badge">Ctrl+K</kbd>
+        </div>
+      </div>
+
+      <!-- Derecha: Estado, Soporte y Avatar Neutro en SVG -->
+      <div class="topbar-right">
+        <div class="service-status">
+          <span class="status-indicator"></span>
+          <span>En línea</span>
+        </div>
+        <a href="#soporte" class="support-anchor">Soporte Técnico DSI SAC</a>
+        <div class="user-avatar" title="Usuario de Sistema">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       LAYOUT PRINCIPAL DE 2 COLUMNAS
+       ========================================================================== -->
+  <div class="layout-container">
+
+    <!-- COLUMNA 1: SIDEBAR IZQUIERDO -->
+    <aside class="sidebar" id="sidebar">
+      
+      <div class="sidebar-search-area">
+        <input type="text" id="sidebarFilter" placeholder="Filtrar por sección...">
+      </div>
+
+      <div class="sidebar-root-title">▼ DSI GERENCIAL - MANUAL DE USUARIO</div>
+
+      <!-- 0. GENERALIDADES -->
+      <div class="nav-category" data-group="cat-0">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 0. GENERALIDADES
+          </button>
+          <ul class="category-links" id="cat-0">
+          <li>
+            <a href="index.html" class="nav-item">
+              <span class="bullet">•</span> 0.0 ¿Qué es DSI GERENCIAL?
+            </a>
+          </li>
+          <li>
+            <a href="01-login.html" class="nav-item">
+              <span class="bullet">•</span> 0.1 Login e inicio de sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 1. BOTONES Y HOME (Abierto y con 1.2 Activo) -->
+      <div class="nav-category" data-group="cat-1">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 1. BOTONES Y HOME
+          </button>
+          <ul class="category-links" id="cat-1">
+          <li>
+            <a href="10-botones-tablas.html" class="nav-item">
+              <span class="bullet">•</span> 1.0 Barra Superior, Botones y Controles de Tabla
+            </a>
+          </li>
+          <li>
+            <a href="11-corporacion.html" class="nav-item">
+              <span class="bullet">•</span> 1.1 Clientes por Corporación
+            </a>
+          </li>
+          <li>
+            <a href="12-vps.html" class="nav-item active">
+              <span class="bullet">•</span> 1.2 Clientes por VPS
+            </a>
+          </li>
+          <li>
+            <a href="13-ftp.html" class="nav-item">
+              <span class="bullet">•</span> 1.3 FTP del DSINET
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. ALERTA -->
+      <div class="nav-category" data-group="cat-2">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 2. ALERTA
+          </button>
+          <ul class="category-links" id="cat-2">
+          <li>
+            <a href="21-alertas-cpe.html" class="nav-item">
+              <span class="bullet">•</span> 2.1 Responsables Alerta CPE
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. MANTENIMIENTOS -->
+      <div class="nav-category" data-group="cat-3">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 3. MANTENIMIENTOS
+          </button>
+          <ul class="category-links" id="cat-3">
+          <li>
+            <a href="31-corporaciones.html" class="nav-item">
+              <span class="bullet">•</span> 3.1 Mantenimiento de Corporaciones
+            </a>
+          </li>
+          <li>
+            <a href="32-empresas.html" class="nav-item">
+              <span class="bullet">•</span> 3.2 Mantenimiento de Empresas
+            </a>
+          </li>
+          <li>
+            <a href="33-aplicaciones.html" class="nav-item">
+              <span class="bullet">•</span> 3.3 Mantenimiento de Aplicaciones
+            </a>
+          </li>
+          <li>
+            <a href="34-usuarios.html" class="nav-item">
+              <span class="bullet">•</span> 3.4 Mantenimiento de Usuarios
+            </a>
+          </li>
+          <li>
+            <a href="35-usuarios-app.html" class="nav-item">
+              <span class="bullet">•</span> 3.5 Usuarios por Aplicación
+            </a>
+          </li>
+          <li>
+            <a href="36-usuarios-empresa.html" class="nav-item">
+              <span class="bullet">•</span> 3.6 Usuarios por Empresa
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- Fondo oscuro en móviles -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- COLUMNA 2: CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+      <!-- Breadcrumbs oficiales -->
+      <nav class="breadcrumb-trail" aria-label="Migas de pan">
+        <a href="index.html">Docs</a>
+        <span class="separator">/</span>
+        <a href="10-botones-tablas.html">1. BOTONES Y HOME</a>
+        <span class="separator">/</span>
+        <span class="active-crumb">1.2 Clientes por VPS</span>
+      </nav>
+
+      <!-- Encabezado de Documento -->
+      <header class="doc-header">
+        <div class="doc-meta-tags">
+          <span class="meta-tag badge-section">INFRAESTRUCTURA Y SERVIDORES</span>
+          <span class="meta-tag">Sección: 1.2</span>
+          <span class="meta-tag">Última revisión: Octubre 2024</span>
+          <span class="meta-tag">Lectura estimada: 4 min</span>
+          <span class="meta-tag badge-access">Nivel: Operativo / Técnico</span>
+        </div>
+        <h1 class="doc-title">1.2 Distribución de Clientes por VPS</h1>
+        <p class="doc-intro">
+          Consola de supervisión para monitorear en qué Servidor Privado Virtual (VPS) se encuentran alojadas las bases de datos e instancias de cada cliente. Permite repartir adecuadamente el trabajo entre servidores, identificar rápidamente la dirección IP de cada empresa y coordinar trabajos de mantenimiento sin interrumpir a otros usuarios.
+        </p>
+      </header>
+
+      <!-- Contenedor de Captura Principal de Pantalla -->
+      <!-- Captura de Bienvenida con margen estándar -->
+        <div class="screenshot-container" style="margin-bottom: 2em;">
+          <img src="IMAGENES/1.HOME/1.2VPS/image 58.png" 
+               alt="Ventana Principal de Acceso" 
+               style="width: 100%; height: auto; display: block; border-radius: 8px;">
+        </div>
+
+        <div class="table-responsive-wrapper">
+          <!-- Tu tabla aquí -->
+        </div>
+
+      <!-- Sección 1: Monitoreo y Supervisión -->
+      <section class="content-section">
+        <h2 class="section-heading">1. Monitoreo y Supervisión de Servidores Virtuales</h2>
+        <p class="section-description">
+          Esta vista centraliza la información de los servidores de la empresa para asegurar que todos los sistemas funcionen con rapidez y sin interrupciones:
+        </p>
+
+        <div class="features-list">
+          <div class="feature-item">
+            <strong>Control Centralizado de VPS:</strong> Permite revisar qué clientes y empresas están funcionando en cada servidor virtual específico para evitar sobrecargas de memoria o procesamiento.
+          </div>
+          <div class="feature-item">
+            <strong>Trazabilidad por Dirección IP:</strong> Relaciona directamente el equipo anfitrión con la base de datos de cada cliente, facilitando conexiones directas y soporte técnico inmediato.
+          </div>
+          <div class="feature-item">
+            <strong>Planificación de Mantenimientos:</strong> Ofrece visibilidad para coordinar horarios de actualización o reinicio de equipos sin perjudicar a empresas ubicadas en otros servidores.
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección 2: Ficha Técnica de Elementos de Control -->
+      <section class="content-section">
+        <h2 class="section-heading">2. Ficha Técnica de Elementos de Control</h2>
+        <p class="section-description">
+          A continuación se detallan los elementos visuales que componen esta consola y la función operativa que cumple cada uno:
+        </p>
+
+        <div class="table-responsive-wrapper">
+          <table class="manual-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">COMPONENTE / ELEMENTO</th>
+                <th style="width: 20%;">TIPO DE ELEMENTO</th>
+                <th style="width: 20%;">FORMATO / VALOR</th>
+                <th style="width: 35%;">PROPÓSITO OPERATIVO Y REGLA TÉCNICA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cabecera Modular</strong></td>
+                <td>Título Principal Centrado</td>
+                <td>Texto Fijo</td>
+                <td>Identifica con claridad el módulo en uso: 'DISTRIBUCIÓN DE CLIENTES POR VPS'.</td>
+              </tr>
+              <tr>
+                <td><strong>Espacio de Despliegue</strong></td>
+                <td>Contenedor Visual</td>
+                <td>Grilla / Tarjetas</td>
+                <td>Panel central donde se organizan los servidores dedicados y las bases de datos activas asociadas.</td>
+              </tr>
+              <tr>
+                <td><strong>Conexión de Red / IP</strong></td>
+                <td>Parámetro de Conexión</td>
+                <td>IPv4 / Nombre de Servidor</td>
+                <td>Dirección de red del servidor virtual para acceso remoto y administración segura de los servicios.</td>
+              </tr>
+              <tr>
+                <td><strong>Estado Operativo</strong></td>
+                <td>Indicador de Disponibilidad</td>
+                <td>Activo / En Mantenimiento</td>
+                <td>Indica en tiempo real si el servidor del cliente está disponible para trabajar con normalidad o en revisión técnica.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Cuadro de Aviso / Callout Box -->
+      <div class="callout-box">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <div class="callout-title">Nota Técnica</div>
+          <p>
+            Revisar periódicamente la distribución de clientes por VPS garantiza un rendimiento óptimo en las operaciones del día a día y permite separar cuentas con alto volumen de trabajo en servidores exclusivos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Paginación Inferior Conectada -->
+      <footer class="pagination-footer">
+        <a href="11-corporacion.html" class="pagination-card active-card">
+          <span class="pagination-direction">← ANTERIOR</span>
+          <span class="pagination-title">1.1 Clientes por Corporación</span>
+        </a>
+        <a href="13-ftp.html" class="pagination-card active-card" style="text-align: right; align-items: flex-end;">
+          <span class="pagination-direction">SIGUIENTE →</span>
+          <span class="pagination-title">1.3 FTP del DSI</span>
+        </a>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

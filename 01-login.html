@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0.1 Login e inicio de sesión | DSI GERENCIAL - MANUAL DE USUARIO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Cabecera Global Ordenada -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Abrir menú de navegación">☰</button>
+        <div class="brand-group">
+          <span class="brand-logo">DSI SAC</span>
+          <span class="brand-divider"></span>
+          <span class="brand-title">PORTAL DE ADMINISTRACION</span>
+          <span class="brand-badge">DOCS v1.0</span>
+        </div>
+      </div>
+
+      <div class="topbar-center">
+        <div class="search-box-global">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="globalSearch" placeholder="Buscar en el manual gerencial...">
+          <kbd class="shortcut-badge">Ctrl+K</kbd>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div class="service-status">
+          <span class="status-indicator"></span>
+          <span>En línea</span>
+        </div>
+        <a href="#soporte" class="support-anchor">Soporte Técnico DSI SAC</a>
+        <!-- Avatar neutral sin iniciales específicas -->
+        <div class="user-avatar" title="Sesión activa: Usuario">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout Principal de 2 Columnas -->
+  <div class="layout-container">
+
+    <!-- Columna 1: Menú Lateral Izquierdo (Sidebar) -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-search-area">
+        <input type="text" id="sidebarFilter" placeholder="Filtrar por sección..." autocomplete="off">
+      </div>
+
+      <nav class="sidebar-navigation">
+        <div class="sidebar-root-title">▼ DSI GERENCIAL - MANUAL DE USUARIO</div>
+
+        <!-- Grupo 0: Generalidades -->
+        <div class="nav-category" data-group="cat-0">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 0. GENERALIDADES
+          </button>
+          <ul class="category-links" id="cat-0">
+            <li>
+              <a href="index.html" class="nav-item">
+                <span class="bullet">•</span> 0.0 ¿Qué es DSI GERENCIAL?
+              </a>
+            </li>
+            <li>
+              <a href="01-login.html" class="nav-item active">
+                <span class="bullet">•</span> 0.1 Login e inicio de sesión
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Grupo 1: Botones y Home -->
+        <div class="nav-category" data-group="cat-1">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 1. BOTONES Y HOME
+          </button>
+          <ul class="category-links" id="cat-1">
+            <li>
+              <a href="10-botones-tablas.html" class="nav-item">
+                <span class="bullet">•</span> 1.0 Barra Superior, Botones y Controles de Tabla
+              </a>
+            </li>
+            <li>
+              <a href="11-corporacion.html" class="nav-item">
+                <span class="bullet">•</span> 1.1 Clientes por Corporación
+              </a>
+            </li>
+            <li>
+              <a href="12-vps.html" class="nav-item">
+                <span class="bullet">•</span> 1.2 Clientes por VPS
+              </a>
+            </li>
+            <li>
+              <a href="13-ftp.html" class="nav-item">
+                <span class="bullet">•</span> 1.3 FTP del DSINET
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Grupo 2: Alerta -->
+        <div class="nav-category" data-group="cat-2">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 2. ALERTA
+          </button>
+          <ul class="category-links" id="cat-2">
+            <li>
+              <a href="21-alertas-cpe.html" class="nav-item">
+                <span class="bullet">•</span> 2.1 Responsables Alerta CPE
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Grupo 3: Mantenimientos -->
+        <div class="nav-category" data-group="cat-3">
+          <button class="category-toggle" aria-expanded="true">
+            <span class="toggle-arrow">▼</span> 3. MANTENIMIENTOS
+          </button>
+          <ul class="category-links" id="cat-3">
+            <li>
+              <a href="31-corporaciones.html" class="nav-item">
+                <span class="bullet">•</span> 3.1 Mantenimiento de Corporaciones
+              </a>
+            </li>
+            <li>
+              <a href="32-empresas.html" class="nav-item">
+                <span class="bullet">•</span> 3.2 Mantenimiento de Empresas
+              </a>
+            </li>
+            <li>
+              <a href="33-aplicaciones.html" class="nav-item">
+                <span class="bullet">•</span> 3.3 Mantenimiento de Aplicaciones
+              </a>
+            </li>
+            <li>
+              <a href="34-usuarios.html" class="nav-item">
+                <span class="bullet">•</span> 3.4 Mantenimiento de Usuarios
+              </a>
+            </li>
+            <li>
+              <a href="35-usuarios-app.html" class="nav-item">
+                <span class="bullet">•</span> 3.5 Usuarios por Aplicación
+              </a>
+            </li>
+            <li>
+              <a href="36-usuarios-empresa.html" class="nav-item">
+                <span class="bullet">•</span> 3.6 Usuarios por Empresa
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+    </aside>
+
+    <!-- Fondo oscuro de bloqueo para móviles -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Columna 2: Contenido Principal -->
+    <main class="main-content">
+
+      <!-- Breadcrumbs de Navegación -->
+      <nav class="breadcrumb-trail" aria-label="Ruta de navegación">
+        <a href="index.html">Docs</a>
+        <span class="separator">/</span>
+        <a href="index.html">0. Generalidades</a>
+        <span class="separator">/</span>
+        <span class="active-crumb">0.1 Login e inicio de sesión</span>
+      </nav>
+
+      <!-- Encabezado del Artículo -->
+      <header class="doc-header">
+        <div class="doc-meta-tags">
+          <span class="meta-tag badge-section">Sección 0.1</span>
+          <span class="meta-tag">Última revisión: Octubre 2024</span>
+          <span class="meta-tag">⏱ 5 min de lectura</span>
+          <span class="meta-tag badge-access">Acceso y Seguridad de Cuentas</span>
+        </div>
+        <h1 class="doc-title">0.1 Inicio de Sesión, Confirmar Cuenta y Recuperar Contraseña</h1>
+        <p class="doc-intro">
+          Guía de acceso al <strong>Portal de Administración DSI GERENCIAL</strong>. Aprenda a ingresar al sistema, a activar por primera vez una cuenta asignada cambiando la clave provisional enviada por correo institucional, y a restablecer su contraseña en caso de olvido o bloqueo preventivo.
+        </p>
+      </header>
+
+      <!-- Cuadro de Aviso Institucional -->
+      <div class="callout-box">
+        <div class="callout-icon">💡</div>
+        <div class="callout-body">
+          <h2 class="callout-title">Recomendación de Seguridad Institucional</h2>
+          <p>
+            <strong>Importante para nuevos usuarios:</strong> Cuando el administrador registre su cuenta en el portal, el sistema le enviará un correo automático con una contraseña provisional de 8 dígitos. Deberá presionar el botón <strong>"Confirmar cuenta"</strong> para registrar su propia clave definitiva antes de realizar su primer ingreso al sistema.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sección 1: Bienvenida y Opciones de Acceso -->
+      <section class="content-section">
+        <h2 class="section-heading">1. Pantalla de Bienvenida y Opciones de Acceso</h2>
+        <p class="section-description">
+          Al abrir el enlace web del portal en su navegador, se visualiza la ventana principal con tres alternativas para acceder:
+        </p>
+
+        <!-- Placeholder 1: Hub de Entrada / Bienvenida -->
+        <div class="screenshot-container" style="margin-bottom: 2em;">
+          <img src="IMAGENES/0.GENERALIDADES/0.1INICIO/image 145.png" 
+               alt="Ventana Principal de Acceso" 
+               style="width: 100%; height: auto; display: block; border-radius: 8px;">
+        </div>
+
+        <div class="table-responsive-wrapper">
+          <table class="manual-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">OPCIÓN / BOTÓN</th>
+                <th style="width: 25%;">TIPO DE CONTROL</th>
+                <th style="width: 50%;">¿PARA QUÉ SIRVE?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Iniciar sesión</strong></td>
+                <td>Botón Azul Principal</td>
+                <td>Acceso habitual para colaboradores que ya cuentan con su usuario y contraseña definitiva en funcionamiento.</td>
+              </tr>
+              <tr>
+                <td><strong>Confirmar cuenta</strong></td>
+                <td>Botón de Borde (Outline)</td>
+                <td>Primer acceso para colaboradores nuevos que necesitan registrar su contraseña definitiva usando la clave provisional recibida por correo.</td>
+              </tr>
+              <tr>
+                <td><strong>Recuperar contraseña</strong></td>
+                <td>Enlace de Texto</td>
+                <td>Permite solicitar un código seguro por correo institucional en caso haya olvidado su clave o su cuenta esté bloqueada por intentos fallidos.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="section-description" style="margin-top: 1.5em;">
+          Al hacer clic sobre el botón <strong>"Iniciar sesión"</strong>, el recuadro se actualizará para ingresar el correo institucional y la clave registrada:
+        </p>
+
+        <!-- Placeholder 2: Formulario Login Iniciar Sesión -->
+        <div class="screenshot-container" style="margin-bottom: 2em;">
+          <img src="IMAGENES/0.GENERALIDADES/0.1INICIO/image 148.png" 
+               alt="Ventana Principal de Acceso" 
+               style="width: 100%; height: auto; display: block; border-radius: 8px;">
+        </div>
+
+      <!-- Sección 2: Confirmar Cuenta y Primer Acceso -->
+      <section class="content-section">
+        <h2 class="section-heading">2. Confirmar Cuenta: Activación de Primer Acceso (Cambiar Contraseña)</h2>
+        <p class="section-description">
+          Si es su primera vez ingresando al sistema, complete estos 5 sencillos pasos para activar su usuario:
+        </p>
+
+        <!-- Pasos numerados estilo Microsoft Learn -->
+        <div class="step-guide">
+          <div class="step-item">
+            <span class="step-number">1</span>
+            <div class="step-body">
+              <strong>Revise su correo institucional:</strong> Ubique el mensaje enviado automáticamente por <em>DSI SAC</em> que contiene su contraseña provisional de 8 caracteres.
+            </div>
+          </div>
+          <div class="step-item">
+            <span class="step-number">2</span>
+            <div class="step-body">
+              <strong>Seleccione "Confirmar cuenta":</strong> En la pantalla inicial de bienvenida del portal, pulse el botón <em>Confirmar cuenta</em>.
+            </div>
+          </div>
+          <div class="step-item">
+            <span class="step-number">3</span>
+            <div class="step-body">
+              <strong>Ingrese sus datos iniciales:</strong> Escriba su correo asignado y pegue con precisión la contraseña temporal recibida en el correo.
+            </div>
+          </div>
+          <div class="step-item">
+            <span class="step-number">4</span>
+            <div class="step-body">
+              <strong>Cree su contraseña personal definitiva:</strong> Defina una nueva clave segura (mínimo 6 caracteres, incluyendo letras, números y al menos un símbolo) y repítala en la casilla de confirmación para validar que coincidan.
+            </div>
+          </div>
+          <div class="step-item">
+            <span class="step-number">5</span>
+            <div class="step-body">
+              <strong>Finalice la activación:</strong> Haga clic en el botón azul <strong>"Guardar y continuar"</strong> para ingresar de manera directa a la consola del portal.
+            </div>
+          </div>
+        </div>
+
+        <!-- Placeholder 3: Modal Cambiar Contraseña -->
+        <div class="screenshot-container" style="margin-bottom: 2em;">
+          <img src="IMAGENES/0.GENERALIDADES/0.1INICIO/image 146.png" 
+               alt="Ventana Principal de Acceso" 
+               style="width: 100%; height: auto; display: block; border-radius: 8px;">
+        </div>
+
+        <div class="table-responsive-wrapper">
+          <table class="manual-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">CAMPO</th>
+                <th style="width: 25%;">TIPO DE DATO</th>
+                <th style="width: 50%;">DESCRIPCIÓN SENCILLA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Correo</strong></td>
+                <td>Texto / Correo</td>
+                <td>Dirección de correo electrónico institucional asignada al colaborador por la empresa.</td>
+              </tr>
+              <tr>
+                <td><strong>Clave enviada</strong></td>
+                <td>Contraseña Protegida</td>
+                <td>Contraseña provisional de 8 caracteres recibida en el mensaje de bienvenida.</td>
+              </tr>
+              <tr>
+                <td><strong>Nueva clave</strong></td>
+                <td>Contraseña Protegida</td>
+                <td>Clave definitiva elegida por el usuario (mínimo 6 caracteres con letras, números y símbolos).</td>
+              </tr>
+              <tr>
+                <td><strong>Confirmar clave</strong></td>
+                <td>Contraseña Protegida</td>
+                <td>Repetición exacta de la nueva clave para asegurar que fue escrita correctamente.</td>
+              </tr>
+              <tr>
+                <td><strong>Guardar y continuar</strong></td>
+                <td>Botón Azul</td>
+                <td>Guarda la clave definitiva, activa la cuenta y da ingreso directo al portal.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Sección 3: Recuperación de Contraseña -->
+      <section class="content-section">
+        <h2 class="section-heading">3. Recuperación de Contraseña por Olvido</h2>
+        <p class="section-description">
+          Si ya cuenta con una cuenta activa pero no recuerda su contraseña o fue bloqueada tras varios intentos erróneos, siga este procedimiento de restablecimiento:
+        </p>
+
+        <!-- Placeholder 4: Formulario Recuperar Contraseña -->
+        <div class="screenshot-container" style="margin-bottom: 2em;">
+          <img src="IMAGENES/0.GENERALIDADES/0.1INICIO/image 147.png" 
+               alt="Ventana Principal de Acceso" 
+               style="width: 100%; height: auto; display: block; border-radius: 8px;">
+        </div>
+
+        <div class="table-responsive-wrapper">
+          <table class="manual-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">CONTROL / CAMPO</th>
+                <th style="width: 25%;">TIPO</th>
+                <th style="width: 50%;">DESCRIPCIÓN SENCILLA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Correo electrónico</strong></td>
+                <td>Texto / Correo</td>
+                <td>Escriba su cuenta de correo corporativo para recibir el código temporal de verificación.</td>
+              </tr>
+              <tr>
+                <td><strong>Enviar código</strong></td>
+                <td>Botón Azul</td>
+                <td>Genera y envía automáticamente el código de desbloqueo a su bandeja de correo electrónico.</td>
+              </tr>
+              <tr>
+                <td><strong>Volver al Login</strong></td>
+                <td>Enlace de Retorno</td>
+                <td>Regresa a la pantalla inicial de bienvenida sin realizar ningún envío o cambio.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Paginación Inferior -->
+      <footer class="pagination-footer">
+        <a href="index.html" class="pagination-card active-card">
+          <span class="pagination-direction">← CAPÍTULO ANTERIOR</span>
+          <span class="pagination-title">0.0 ¿Qué es DSI GERENCIAL?</span>
+        </a>
+        <a href="10-botones-tablas.html" class="pagination-card active-card">
+          <span class="pagination-direction">SIGUIENTE CAPÍTULO →</span>
+          <span class="pagination-title">1.0 Barra Superior, Botones y Controles de Tabla</span>
+        </a>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
