@@ -11,43 +11,24 @@
 </head>
 <body>
 
-  <!-- Cabecera Global Ordenada -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="topbar-left">
-        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Abrir menú de navegación">☰</button>
-        <div class="brand-group">
-          <span class="brand-logo">DSI SAC</span>
-          <span class="brand-divider"></span>
-          <span class="brand-title">PORTAL DE ADMINISTRACION</span>
-          <span class="brand-badge">DOCS v1.0</span>
-        </div>
-      </div>
-
-      <div class="topbar-center">
-        <div class="search-box-global">
-          <span class="search-icon">🔍</span>
-          <input type="text" id="globalSearch" placeholder="Buscar en el manual gerencial...">
-          <kbd class="shortcut-badge">Ctrl+K</kbd>
-        </div>
-      </div>
-
-      <div class="topbar-right">
-        <div class="service-status">
-          <span class="status-indicator"></span>
-          <span>En línea</span>
-        </div>
-        <a href="#soporte" class="support-anchor">Soporte Técnico DSI SAC</a>
-        <!-- Avatar neutral sin iniciales específicas -->
-        <div class="user-avatar" title="Sesión activa: Usuario">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-        </div>
+  <!-- Cabecera Global Simplificada -->
+<header class="topbar">
+  <div class="topbar-inner">
+    
+    <div class="topbar-left">
+      <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Abrir menú de navegación">☰</button>
+      <div class="brand-group">
+        <span class="brand-logo">DSI SAC</span>
+        <span class="brand-divider"></span>
+        <span class="brand-title">MANUAL CORPORATIVO - DSI GERENCIAL</span>
       </div>
     </div>
-  </header>
+
+    <!-- Bloque derecho vacío o reservado para no romper flexbox -->
+    <div class="topbar-right" style="display: none;"></div>
+
+  </div>
+</header>
 
   <!-- Layout Principal de 2 Columnas -->
   <div class="layout-container">

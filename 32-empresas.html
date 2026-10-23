@@ -14,46 +14,23 @@
   <!-- ==========================================================================
        CABECERA GLOBAL (TOPBAR)
        ========================================================================== -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      
-      <!-- Izquierda: Marca y Logotipo -->
-      <div class="topbar-left">
-        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Abrir menú de navegación">☰</button>
-        <div class="brand-group">
-          <div class="brand-logo">DSI SAC</div>
-          <div class="brand-divider"></div>
-          <div class="brand-title">PORTAL DE ADMINISTRACION</div>
-          <span class="brand-badge">DOCS v1.0</span>
-        </div>
+ <header class="topbar">
+  <div class="topbar-inner">
+    
+    <div class="topbar-left">
+      <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Abrir menú de navegación">☰</button>
+      <div class="brand-group">
+        <span class="brand-logo">DSI SAC</span>
+        <span class="brand-divider"></span>
+        <span class="brand-title">MANUAL CORPORATIVO - DSI GERENCIAL</span>
       </div>
-
-      <!-- Centro: Buscador Global con atajo Ctrl+K -->
-      <div class="topbar-center">
-        <div class="search-box-global">
-          <span class="search-icon">🔍</span>
-          <input type="text" placeholder="Buscar en la documentación..." id="globalSearchInput">
-          <kbd class="shortcut-badge">Ctrl+K</kbd>
-        </div>
-      </div>
-
-      <!-- Derecha: Estado del servicio, Enlace de Soporte y Avatar Neutro en SVG -->
-      <div class="topbar-right">
-        <div class="service-status">
-          <span class="status-indicator"></span>
-          <span>🟢 En línea</span>
-        </div>
-        <a href="#soporte" class="support-anchor">Soporte Técnico DSI SAC</a>
-        <div class="user-avatar" title="Usuario del Sistema">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-        </div>
-      </div>
-
     </div>
-  </header>
+
+    <!-- Bloque derecho vacío o reservado para no romper flexbox -->
+    <div class="topbar-right" style="display: none;"></div>
+
+  </div>
+</header>
 
   <!-- ==========================================================================
        LAYOUT PRINCIPAL DE 2 COLUMNAS
